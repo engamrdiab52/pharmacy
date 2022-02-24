@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">pharmacy_1</string>
+    <string name="home">Home</string>
+    <string name="cart">cart</string>
+    <string name="favorite">Favorite</string>
+    <string name="search">Search</string>
+</resources>
