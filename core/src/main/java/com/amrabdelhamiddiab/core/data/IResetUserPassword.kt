@@ -1,5 +1,5 @@
 package com.amrabdelhamiddiab.core.data
 
-interface IResetPassword {
+interface IResetUserPassword {
     suspend fun resetPassword(email: String):Boolean
 }
