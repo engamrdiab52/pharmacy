@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/nested_graph_home">
+
+    <navigation android:id="@+id/nested_graph_login"
+        app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.login.LoginFragment"
+            android:label="Login"
+            tools:layout="@layout/fragment_login">
+            <action
+                android:id="@+id/action_loginFragment_to_resetPasswordFragment2"
+                app:destination="@id/resetPasswordFragment"
+                app:launchSingleTop="true"
+                app:popUpTo="@id/loginFragment"/>
+            <action
+                android:id="@+id/action_loginFragment_to_signupFragment2"
+                app:destination="@id/signupFragment"
+                app:launchSingleTop="true"
+                app:popUpTo="@id/loginFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/resetPasswordFragment"
+            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.resetPassword.ResetPasswordFragment"
+            android:label="ResetPasswordFragment"
+            tools:layout="@layout/fragment_reset_password">
+            <action
+                android:id="@+id/action_resetPasswordFragment2_to_loginFragment"
+                app:destination="@id/loginFragment"
+                app:launchSingleTop="true"
+                app:popUpTo="@id/resetPasswordFragment"
+                app:popUpToInclusive="true"/>
+        </fragment>
+
+        <fragment
+            android:id="@+id/signupFragment"
+            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.signup.SignupFragment"
+            android:label="SignUp"
+            tools:layout="@layout/fragment_signup">
+            <action
+                android:id="@+id/action_signupFragment2_to_loginFragment"
+                app:destination="@id/loginFragment"
+                app:launchSingleTop="true"
+                app:popUpTo="@id/signupFragment"
+                app:popUpToInclusive="true"/>
+        </fragment>
+        <action
+            android:id="@+id/action_global_nested_graph_home"
+            app:destination="@id/nested_graph_home"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nested_graph_login"
+            app:popUpToInclusive="true"/>
+    </navigation>
+    <navigation android:id="@+id/nested_graph_home"
+        app:startDestination="@id/homeFragment">
+        <fragment
+            android:id="@+id/homeFragment"
+            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeFragment"
+            android:label="Home"
+            tools:layout="@layout/fragment_home" />
+        <action
+            android:id="@+id/action_global_nested_graph_login"
+            app:destination="@id/nested_graph_login"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nested_graph_home"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_global_deleteAccount"
+            app:destination="@id/deleteAccount" />
+    </navigation>
+    <fragment
+        android:id="@+id/deleteAccount"
+        android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.deleteAccount.DeleteAccount"
+        android:label="Delete Account"
+        tools:layout="@layout/fragment_delete_account"/>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.cart.CartFragment"
+        android:label="Cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.favorite.FavoriteFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+</navigation>

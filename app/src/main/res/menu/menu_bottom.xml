@@ -9,11 +9,11 @@
          android:title="@string/search"
          android:icon="@drawable/ic_search" />
     <item
-        android:id="@+id/nested_graph_favorites"
+        android:id="@+id/favoriteFragment"
         android:title="@string/favorite"
         android:icon="@drawable/ic_favorite"/>
     <item
-        android:id="@+id/nested_graph_cart"
+        android:id="@+id/cartFragment"
         android:title="@string/cart"
         android:icon="@drawable/ic_baseline_add_shopping_cart_24"/>
 </menu>
