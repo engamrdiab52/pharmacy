@@ -43,7 +43,7 @@
     <string name="forget_password">Forget Password ?</string>
     <string name="new_credentials">NEW CREDENTIALS</string>
     <string name="to_home">TO HOME</string>
-    <string name="send_verification_email">Send verification email</string>
+    <string name="send_reset_password_email">Send Reset Password email</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="Fragment_favorite">FavoriteFragment</string>
     <string name="cartfragment">CartFragment</string>

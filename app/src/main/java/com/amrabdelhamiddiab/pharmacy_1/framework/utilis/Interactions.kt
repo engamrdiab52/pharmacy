@@ -9,8 +9,8 @@ data class Interactions(
     val signOutUser: SignOutUser,
     val verifyUserEmail: VerifyUserEmail,
     val signInUser: SignInUser,
-    val emailVerifiedState: EmailVerifiedState,
+    val emailVerifiedState: EmailVerifiedState/*,
     val downloadCategories: DownloadCategories,
     val uploadFavoriteItem: UploadFavoriteItem,
-    val removeFavoriteItem: RemoveFavoriteItem,
+    val removeFavoriteItem: RemoveFavoriteItem,*/
 )

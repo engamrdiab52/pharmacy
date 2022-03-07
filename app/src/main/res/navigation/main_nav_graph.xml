@@ -13,12 +13,12 @@
             android:label="Login"
             tools:layout="@layout/fragment_login">
             <action
-                android:id="@+id/action_loginFragment_to_resetPasswordFragment2"
+                android:id="@+id/action_loginFragment_to_resetPasswordFragment"
                 app:destination="@id/resetPasswordFragment"
                 app:launchSingleTop="true"
                 app:popUpTo="@id/loginFragment"/>
             <action
-                android:id="@+id/action_loginFragment_to_signupFragment2"
+                android:id="@+id/action_loginFragment_to_signupFragment"
                 app:destination="@id/signupFragment"
                 app:launchSingleTop="true"
                 app:popUpTo="@id/loginFragment" />
@@ -29,7 +29,7 @@
             android:label="ResetPasswordFragment"
             tools:layout="@layout/fragment_reset_password">
             <action
-                android:id="@+id/action_resetPasswordFragment2_to_loginFragment"
+                android:id="@+id/action_resetPasswordFragment_to_loginFragment"
                 app:destination="@id/loginFragment"
                 app:launchSingleTop="true"
                 app:popUpTo="@id/resetPasswordFragment"
@@ -42,7 +42,7 @@
             android:label="SignUp"
             tools:layout="@layout/fragment_signup">
             <action
-                android:id="@+id/action_signupFragment2_to_loginFragment"
+                android:id="@+id/action_signupFragment_to_loginFragment"
                 app:destination="@id/loginFragment"
                 app:launchSingleTop="true"
                 app:popUpTo="@id/signupFragment"
