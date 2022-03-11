@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
     private lateinit var binding: ActivityMainBinding
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var navigationView: NavigationView
+    private lateinit var coordinatorLayout: CoordinatorLayout
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var toolbar: MaterialToolbar
     private lateinit var collapsingToolbar: CollapsingToolbarLayout
@@ -55,6 +57,7 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
         appBarLayout = binding.appBarMain.appbar
         collapsingToolbar = binding.appBarMain.collapsing
         preferenceHelper = PreferenceManager(this.applicationContext)
+        coordinatorLayout = binding.appBarMain.coordinator
         drawerLayout = binding.drawerLayout
         navigationView = binding.navigationView
         appBar = binding.appBarMain
@@ -88,13 +91,10 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
             ) {
                 Log.d(TAG, destination.toString() + "666666666666666666666666666666666")
                 appBarLayout.visibility = View.GONE
-                bottomNavigationView.visibility = View.GONE
             } else {
                 appBarLayout.visibility = View.VISIBLE
-                bottomNavigationView.visibility = View.VISIBLE
             }
         }
-        //------------------------------
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -109,6 +109,11 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
                             preferenceHelper.setUserLoggedIn(false)
                             Log.d(TAG, FirebaseAuth.getInstance().currentUser.toString())
                             navController.navigate(R.id.nested_graph_login)
+                           //to recreate the view to correct the toolbar position
+                            finish();
+                            overridePendingTransition(0, 0);
+                            startActivity(intent)
+                            overridePendingTransition(0, 0);
                             true
                         }
                     } catch (e: Exception) {
@@ -148,14 +153,16 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
 
     override fun setDrawerLocked() {
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-        toolbar.visibility = View.GONE
+        //   toolbar.visibility = View.GONE
+        //   appBarLayout.visibility = View.GONE
         //  fab.visibility = View.GONE
         bottomNavigationView.visibility = View.GONE
     }
 
     override fun setDrawerUnlocked() {
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
-        toolbar.visibility = View.VISIBLE
+        //   toolbar.visibility = View.VISIBLE
+        //  appBarLayout.visibility = View.VISIBLE
         //  fab.visibility = View.VISIBLE
         bottomNavigationView.visibility = View.VISIBLE
     }
