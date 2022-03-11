@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
     private lateinit var collapsingToolbar: CollapsingToolbarLayout
     private lateinit var appBarLayout: AppBarLayout
     private lateinit var appBar: AppBarMainBinding
+    private lateinit var searchView: SearchView
 
     //  private lateInit var fab: FloatingActionButton
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -62,6 +64,9 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
         navigationView = binding.navigationView
         appBar = binding.appBarMain
         toolbar = binding.appBarMain.toolbar
+     /*   searchView = binding.appBarMain.searchBar
+        searchView.setIconifiedByDefault(false)
+        searchView.queryHint = "bvbvbbv"*/
         //fab = binding.appBarMain.floatingActionButton
         bottomNavigationView = binding.appBarMain.bottomNavigationView
         setSupportActionBar(toolbar)

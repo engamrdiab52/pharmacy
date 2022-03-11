@@ -35,7 +35,7 @@
                 app:contentScrim="@android:color/white"
                 app:expandedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Expanded"
                 app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
-
+                <!--app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"-->
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -51,8 +51,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="@android:color/white"
+                    app:layout_collapseMode="pin"
                     app:popupTheme="@style/Theme.Pharmacy_1.AppBarOverlay">
-
+                    <!--<androidx.appcompat.widget.SearchView
+                        android:id="@+id/search_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        />-->
                 </com.google.android.material.appbar.MaterialToolbar>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
