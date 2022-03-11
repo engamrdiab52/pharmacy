@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
         appBar = binding.appBarMain
         toolbar = binding.appBarMain.toolbar
         //fab = binding.appBarMain.floatingActionButton
-        bottomNavigationView = binding.appBarMain.contentMain.bottomNavigationView
+        bottomNavigationView = binding.appBarMain.bottomNavigationView
         setSupportActionBar(toolbar)
         /* fab.setOnClickListener {
             SnackBar.make(it, "Replace with your own action", SnackBar.LENGTH_LONG)
