@@ -20,7 +20,7 @@
     </style>
 
     <style name="Theme.Pharmacy_1.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-       <!-- <item name="android:textColor">@android:color/black</item>-->
+        <item name="android:textColor">@android:color/black</item>
     </style>
     <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_background</item>

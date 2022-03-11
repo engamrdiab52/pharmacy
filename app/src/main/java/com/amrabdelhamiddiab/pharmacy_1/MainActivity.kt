@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -18,8 +17,12 @@ import androidx.navigation.ui.setupWithNavController
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PreferenceManager
 import com.amrabdelhamiddiab.core.data.IPreferenceHelper
 import com.amrabdelhamiddiab.pharmacy_1.databinding.ActivityMainBinding
+import com.amrabdelhamiddiab.pharmacy_1.databinding.AppBarMainBinding
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.MyDrawerController
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.checkInternetConnection
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.CollapsingToolbarLayout
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -36,7 +39,10 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var navigationView: NavigationView
     private lateinit var drawerLayout: DrawerLayout
-    private lateinit var toolbar: Toolbar
+    private lateinit var toolbar: MaterialToolbar
+    private lateinit var collapsingToolbar: CollapsingToolbarLayout
+    private lateinit var appBarLayout: AppBarLayout
+    private lateinit var appBar: AppBarMainBinding
 
     //  private lateInit var fab: FloatingActionButton
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -46,9 +52,12 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        appBarLayout = binding.appBarMain.appbar
+        collapsingToolbar = binding.appBarMain.collapsing
         preferenceHelper = PreferenceManager(this.applicationContext)
         drawerLayout = binding.drawerLayout
         navigationView = binding.navigationView
+        appBar = binding.appBarMain
         toolbar = binding.appBarMain.toolbar
         //fab = binding.appBarMain.floatingActionButton
         bottomNavigationView = binding.appBarMain.contentMain.bottomNavigationView
@@ -70,6 +79,22 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
             ), drawerLayout
         )
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
+        //----------------------------
+        //to hide the appBarLayout in any fragment
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.loginFragment ||
+                destination.id == R.id.signupFragment ||
+                destination.id == R.id.resetPasswordFragment
+            ) {
+                Log.d(TAG, destination.toString() + "666666666666666666666666666666666")
+                appBarLayout.visibility = View.GONE
+                bottomNavigationView.visibility = View.GONE;
+            } else {
+                appBarLayout.visibility = View.VISIBLE
+                bottomNavigationView.visibility = View.VISIBLE;
+            }
+        }
+        //------------------------------
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -99,7 +124,7 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
                 "No Network please turn on",
                 Toast.LENGTH_SHORT
             ).show()
-            return    super.onOptionsItemSelected(item)
+            return super.onOptionsItemSelected(item)
         }
     }
 
@@ -112,6 +137,7 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
         menuInflater.inflate(R.menu.menu_app_bar, menu)
         return true
     }
+
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
