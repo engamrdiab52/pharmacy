@@ -88,10 +88,10 @@ class MainActivity : AppCompatActivity(), MyDrawerController {
             ) {
                 Log.d(TAG, destination.toString() + "666666666666666666666666666666666")
                 appBarLayout.visibility = View.GONE
-                bottomNavigationView.visibility = View.GONE;
+                bottomNavigationView.visibility = View.GONE
             } else {
                 appBarLayout.visibility = View.VISIBLE
-                bottomNavigationView.visibility = View.VISIBLE;
+                bottomNavigationView.visibility = View.VISIBLE
             }
         }
         //------------------------------
