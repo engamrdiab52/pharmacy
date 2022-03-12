@@ -21,17 +21,27 @@ class HomeFragment : Fragment() {
     private lateinit var preferenceHelper: IPreferenceHelper
     private lateinit var recyclerView: EpoxyRecyclerView
     private lateinit var layoutManager: LinearLayoutManager
+
+    /*    private val myList = listOf(
+            ImageOfSlider(1000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_1.png" ),
+            ImageOfSlider(2000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_2.png"),
+            ImageOfSlider(3000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_3.png"),
+            ImageOfSlider(4000L,"gs://pharmacy-31cb6.appspot.com/slider images/image_4.png"),
+            ImageOfSlider(5000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_5.png"),
+            ImageOfSlider(6000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_6.png")
+          )*/
     private val myList = listOf(
-        ImageOfSlider(1000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_1.png" ),
-        ImageOfSlider(2000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_2.png"),
-        ImageOfSlider(3000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_3.png"),
-        ImageOfSlider(4000L,"gs://pharmacy-31cb6.appspot.com/slider images/image_4.png"),
-        ImageOfSlider(5000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_5.png"),
-        ImageOfSlider(6000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_6.png")
-      )
+    ImageOfSlider(1000L,"slider images/image_1.png"),
+        ImageOfSlider(2000L,"slider images/image_2.png"),
+        ImageOfSlider(3000L,"slider images/image_3.png"),
+        ImageOfSlider(4000L,"slider images/image_4.png"),
+        ImageOfSlider(5000L,"slider images/image_5.png"),
+        ImageOfSlider(6000L,"slider images/image_6.png"),
+    )
     private val homeEpoxyController by lazy {
         HomeEpoxyController()
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

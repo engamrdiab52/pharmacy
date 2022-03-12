@@ -5,11 +5,13 @@ import com.amrabdelhamiddiab.core.data.*
 import com.amrabdelhamiddiab.core.useCases.*
 import com.amrabdelhamiddiab.pharmacy_1.framework.firebase.*
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 
 
 class PharmacyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+       // Firebase.database.setPersistenceEnabled(true)
         val mAuth = FirebaseAuth.getInstance()
         LoginFlowViewModelFactory.inject(
             this, Interactions(
