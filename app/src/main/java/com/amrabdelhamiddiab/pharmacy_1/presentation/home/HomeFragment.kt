@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.airbnb.epoxy.EpoxyRecyclerView
 import com.amrabdelhamiddiab.core.data.IPreferenceHelper
+import com.amrabdelhamiddiab.core.domain.ImageOfSlider
 import com.amrabdelhamiddiab.pharmacy_1.R
 import com.amrabdelhamiddiab.pharmacy_1.databinding.FragmentHomeBinding
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PreferenceManager
@@ -20,8 +21,14 @@ class HomeFragment : Fragment() {
     private lateinit var preferenceHelper: IPreferenceHelper
     private lateinit var recyclerView: EpoxyRecyclerView
     private lateinit var layoutManager: LinearLayoutManager
-    private val myList = listOf("0", "1","2","3","4","5","6","7","0",
-        "1","2","3","4","5","6","7","0", "1","2","3","4","5","6","7")
+    private val myList = listOf(
+        ImageOfSlider(1000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_1.png" ),
+        ImageOfSlider(2000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_2.png"),
+        ImageOfSlider(3000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_3.png"),
+        ImageOfSlider(4000L,"gs://pharmacy-31cb6.appspot.com/slider images/image_4.png"),
+        ImageOfSlider(5000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_5.png"),
+        ImageOfSlider(6000L, "gs://pharmacy-31cb6.appspot.com/slider images/image_6.png")
+      )
     private val homeEpoxyController by lazy {
         HomeEpoxyController()
     }
