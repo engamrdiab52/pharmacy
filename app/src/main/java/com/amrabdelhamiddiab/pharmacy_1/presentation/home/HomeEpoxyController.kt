@@ -6,6 +6,7 @@ import com.airbnb.epoxy.EpoxyAsyncUtil
 import com.airbnb.epoxy.TypedEpoxyController
 import com.amrabdelhamiddiab.core.domain.ImageOfSlider
 import com.amrabdelhamiddiab.pharmacy_1.CarocellBindingModel_
+import com.amrabdelhamiddiab.pharmacy_1.searchBar
 import com.worldsnas.slider.slider
 
 class HomeEpoxyController : TypedEpoxyController<List<ImageOfSlider>?>(
@@ -13,6 +14,10 @@ class HomeEpoxyController : TypedEpoxyController<List<ImageOfSlider>?>(
     EpoxyAsyncUtil.getAsyncBackgroundHandler()
 ) {
     override fun buildModels(imagesOfSlider: List<ImageOfSlider>?) {
+        searchBar {
+            id("search_bar")
+        }
+        //*************************************************
         slider {
             id("dot_indicator")
             //delay before every cycle if user is not scrolling
@@ -36,8 +41,8 @@ class HomeEpoxyController : TypedEpoxyController<List<ImageOfSlider>?>(
                 )
             }
             infinite(true)
-            copier {
-                oldModel -> oldModel as CarocellBindingModel_
+            copier { oldModel ->
+                oldModel as CarocellBindingModel_
                 CarocellBindingModel_().apply {
                     id(oldModel.id())
                     image(oldModel.image())
