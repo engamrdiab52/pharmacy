@@ -3,17 +3,19 @@ package com.amrabdelhamiddiab.pharmacy_1.presentation.home
 import android.graphics.Color
 import android.media.Image
 import com.airbnb.epoxy.EpoxyAsyncUtil
+import com.airbnb.epoxy.Typed2EpoxyController
 import com.airbnb.epoxy.TypedEpoxyController
 import com.airbnb.epoxy.carousel
 import com.amrabdelhamiddiab.core.domain.ImageOfSlider
+import com.amrabdelhamiddiab.core.domain.Offer
 import com.amrabdelhamiddiab.pharmacy_1.*
 import com.worldsnas.slider.slider
 
-class HomeEpoxyController : TypedEpoxyController<List<ImageOfSlider>?>(
+class HomeEpoxyController(private val homeViewModel: HomeViewModel) : Typed2EpoxyController<List<ImageOfSlider>?, List<Offer>?>(
     EpoxyAsyncUtil.getAsyncBackgroundHandler(),
     EpoxyAsyncUtil.getAsyncBackgroundHandler()
 ) {
-    override fun buildModels(imagesOfSlider: List<ImageOfSlider>?) {
+    override fun buildModels(imagesOfSlider: List<ImageOfSlider>?, offers: List<Offer>?) {
         searchBar {
             id("search_bar")
         }
@@ -54,23 +56,25 @@ class HomeEpoxyController : TypedEpoxyController<List<ImageOfSlider>?>(
             id("offers_title")
         }
         //*************************************************************
-        val offerCaroCellItem = imagesOfSlider?.mapIndexed { _, image ->
-            OfferCellBindingModel_().id(image.id)
+        val listOfOffers = offers?.mapIndexed { _, offer ->
+            OfferCellBindingModel_().apply {
+                id(offer.id_medicine.toString())
+                offer(offer)
+            }
         }
         carousel {
             id("offers_caroCell")
-            offerCaroCellItem?.let { models(it) }
-
+            listOfOffers?.let { models(it) }
         }
         //***********************************************
-        val offerCaroCellItem2 = imagesOfSlider?.mapIndexed { _, image ->
+/*        val offerCaroCellItem2 = imagesOfSlider?.mapIndexed { _, image ->
             OfferCellBindingModel_().id(image.id)
         }
         carousel {
-            id("offers_caroCell")
+            id("fers_caroCell")
             offerCaroCellItem2?.let { models(it) }
 
-        }
+        }*/
         //******************************************
         /*offerCell {
             imagesOfSlider?.mapIndexed { _, image ->

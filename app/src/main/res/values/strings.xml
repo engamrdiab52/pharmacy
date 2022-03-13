@@ -55,4 +55,7 @@
     <string name="image">image</string>
     <string name="name">Name</string>
     <string name="offers">Offers</string>
+    <string name="_140_le">140 LE</string>
+    <string name="name_of_medicine_14ml">name of medicine 14ml</string>
+    <string name="buy_2_get_3">buy 2 get 3</string>
 </resources>

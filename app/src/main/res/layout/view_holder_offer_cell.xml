@@ -1,27 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="onClickContent"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="offer"
+            type="com.amrabdelhamiddiab.core.domain.Offer" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_margin="0dp"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
-        app:strokeWidth="4dp"
+        app:strokeWidth="0dp"
+        android:onClick="@{onClickContent}"
+        app:strokeColor="@color/red"
         android:layout_width="180dp"
         android:layout_height="300dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <TextView
-                android:text="12312k;knsoibntobntoenboeinboenbnboinbonb;onb......"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:scaleType="fitCenter"
+                app:imageUrl="@{offer.medicine_image_url}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_view_offer_offer_text"
+                app:layout_constraintVertical_weight="5"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/txt_view_offer_offer_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/red"
+                android:gravity="center"
+                android:text="@{offer.offer_on_medicine}"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textColor="@color/white"
+                app:layout_constraintVertical_weight="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_view_offer_medicine_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:lines="2"
+                android:maxLines="2"
+                android:text="@{offer.name_en_Medicine}"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintVertical_weight="2" />
+            <TextView
+                android:id="@+id/txt_view_offer_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@{offer.price_medicine}"
+                android:textColor="@color/red"
+                app:layout_constraintVertical_weight="1"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                app:layout_constraintBottom_toTopOf="@+id/btn_offer_cell"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_offer_cell"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:layout_constraintVertical_weight="1"
+                android:text="@string/add_to_cart"
+                android:textColor="@color/blue"
+                app:cornerRadius="8dp"
+                app:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:strokeColor="@color/blue"
+                app:strokeWidth="2dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>

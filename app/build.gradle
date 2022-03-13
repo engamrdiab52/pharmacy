@@ -65,6 +65,7 @@ dependencies {
     implementation "com.airbnb.android:epoxy:4.6.2"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.4'
     kapt "com.airbnb.android:epoxy-processor:4.6.2"
     //dataBinding Epoxy
     implementation "com.airbnb.android:epoxy-databinding:4.6.2"
