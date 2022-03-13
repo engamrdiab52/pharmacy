@@ -10,7 +10,6 @@ data class Interactions(
     val verifyUserEmail: VerifyUserEmail,
     val signInUser: SignInUser,
     val emailVerifiedState: EmailVerifiedState,
-    val downloadOffers: DownloadOffers/*
-    val uploadFavoriteItem: UploadFavoriteItem,
-    val removeFavoriteItem: RemoveFavoriteItem,*/
+    val downloadOffers: DownloadOffers,
+    val downloadImagesOfSlider :DownloadImagesOfSlider
 )

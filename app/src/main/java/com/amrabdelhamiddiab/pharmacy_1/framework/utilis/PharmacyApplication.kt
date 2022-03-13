@@ -48,6 +48,13 @@ class PharmacyApplication : Application() {
                             databaseReference
                         )
                     )
+                ),
+                DownloadImagesOfSlider(
+                    RepositoryDownloadImagesOfSlider(
+                        DownloadImagesOfSliderImpl(
+                            databaseReference
+                        )
+                    )
                 )
             )
         )

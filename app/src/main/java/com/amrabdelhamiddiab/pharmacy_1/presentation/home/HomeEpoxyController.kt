@@ -27,9 +27,9 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : Typed2Epox
             //controll the indicator visibility
             indicatorVisible(true)
             //Front/Selected indicator dot color (if indicator visible)
-            indicatorSelectedDotColor(Color.BLACK)
+            indicatorSelectedDotColor(Color.GRAY)
             //rest of indicator dot color (if indicator visible)
-            indicatorDotColor(Color.GRAY)
+            indicatorDotColor(Color.BLUE)
             //this is a extension function not the constructor
             // it hase to be map function not forEach
             imagesOfSlider?.mapIndexed { _, image ->
@@ -58,7 +58,7 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : Typed2Epox
         //*************************************************************
         val listOfOffers = offers?.mapIndexed { _, offer ->
             OfferCellBindingModel_().apply {
-                id(offer.id_medicine.toString())
+                id(offer.id_medicine)
                 offer(offer)
             }
         }

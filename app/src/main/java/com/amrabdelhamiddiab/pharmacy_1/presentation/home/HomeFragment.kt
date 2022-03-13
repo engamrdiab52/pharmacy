@@ -30,12 +30,12 @@ class HomeFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var layoutManager: LinearLayoutManager
     private val myList: List<ImageOfSlider>? = listOf(
-        ImageOfSlider(1000L, "slider images/image_1.png"),
-        ImageOfSlider(2000L, "slider images/image_2.png"),
-        ImageOfSlider(3000L, "slider images/image_3.png"),
-        ImageOfSlider(4000L, "slider images/image_4.png"),
-        ImageOfSlider(5000L, "slider images/image_5.png"),
-        ImageOfSlider(6000L, "slider images/image_6.png"),
+        ImageOfSlider("1000", "slider images/image_1.png"),
+        ImageOfSlider("2000", "slider images/image_2.png"),
+        ImageOfSlider("3000", "slider images/image_3.png"),
+        ImageOfSlider("4000", "slider images/image_4.png"),
+        ImageOfSlider("5000", "slider images/image_5.png"),
+        ImageOfSlider("6000", "slider images/image_6.png"),
     )
     private val homeEpoxyController by lazy {
         HomeEpoxyController(viewModel)
@@ -66,12 +66,33 @@ class HomeFragment : Fragment() {
                 binding.loadingIndecatorHome.visibility = View.GONE
             }
         }
-        viewModel.listOfOffers.observe(viewLifecycleOwner) {
-            homeEpoxyController.setData(myList, it)
+    /*    viewModel.listOfOffers.observe(viewLifecycleOwner) {
+            homeEpoxyController.setData(viewModel.listOfOfImagesOfSlider.value, it)
             //  recyclerView.adapter = homeEpoxyController.adapter
             Log.d(TAG, "6565656565656565656565" + it.toString())
         }
-        viewModel.downloadOffers()
+        viewModel.listOfOfImagesOfSlider.observe(viewLifecycleOwner){
+         //   homeEpoxyController.setData(it, viewModel.listOfOffers.value)
+            homeEpoxyController.d
+        }*/
+        viewModel.pairMediatorLiveData.observe(viewLifecycleOwner){
+           val(a,b) = it
+            Log.d(TAG, "AAAAA"+ a.toString() +"BBBBB"+ b.toString())
+            if (a != null && b!= null){
+                homeEpoxyController.setData(b, a)
+                Log.d(TAG, "Inside ab pair33333333333333333333333333")
+            }else{
+                Log.d(TAG, "ONE is error")
+               /* val a1 = listOf(Offer(medicine_image_url = "slider images/image_1.png"))
+                val b1 = listOf(ImageOfSlider(imageUrl = "slider images/image_1.png"))*/
+                val a1 = listOf(Offer())
+                val b1 = listOf(ImageOfSlider(imageUrl = "slider images/image_1.png"))
+                homeEpoxyController.setData(b1, a1)
+            }
+        }
+     //   viewModel.downloadImagesOfSlider()
+      //  viewModel.downloadOffers()
+        viewModel.downloadHomeContents()
         return binding.root
     }
 
