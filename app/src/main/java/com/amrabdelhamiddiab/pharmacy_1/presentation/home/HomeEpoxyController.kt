@@ -4,9 +4,9 @@ import android.graphics.Color
 import android.media.Image
 import com.airbnb.epoxy.EpoxyAsyncUtil
 import com.airbnb.epoxy.TypedEpoxyController
+import com.airbnb.epoxy.carousel
 import com.amrabdelhamiddiab.core.domain.ImageOfSlider
-import com.amrabdelhamiddiab.pharmacy_1.CarocellBindingModel_
-import com.amrabdelhamiddiab.pharmacy_1.searchBar
+import com.amrabdelhamiddiab.pharmacy_1.*
 import com.worldsnas.slider.slider
 
 class HomeEpoxyController : TypedEpoxyController<List<ImageOfSlider>?>(
@@ -49,5 +49,33 @@ class HomeEpoxyController : TypedEpoxyController<List<ImageOfSlider>?>(
                 }
             }
         }
+        //**********************************************************
+        offersTitle {
+            id("offers_title")
+        }
+        //*************************************************************
+        val offerCaroCellItem = imagesOfSlider?.mapIndexed { _, image ->
+            OfferCellBindingModel_().id(image.id)
+        }
+        carousel {
+            id("offers_caroCell")
+            offerCaroCellItem?.let { models(it) }
+
+        }
+        //***********************************************
+        val offerCaroCellItem2 = imagesOfSlider?.mapIndexed { _, image ->
+            OfferCellBindingModel_().id(image.id)
+        }
+        carousel {
+            id("offers_caroCell")
+            offerCaroCellItem2?.let { models(it) }
+
+        }
+        //******************************************
+        /*offerCell {
+            imagesOfSlider?.mapIndexed { _, image ->
+                id(image.id)
+            }
+        }*/
     }
 }
