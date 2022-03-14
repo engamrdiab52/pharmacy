@@ -4,8 +4,6 @@
     <string name="cart">cart</string>
     <string name="favorite">Favorite</string>
     <string name="search">Search</string>
-
-    <string name="categories">Categories</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
@@ -58,4 +56,10 @@
     <string name="_140_le">140 LE</string>
     <string name="name_of_medicine_14ml">name of medicine 14ml</string>
     <string name="buy_2_get_3">buy 2 get 3</string>
+    <string name="medicines">Medicines</string>
+    <string name="health">Health</string>
+    <string name="beauty_care">beauty care</string>
+    <string name="personal_care">personal care</string>
+    <string name="accessories">Accessories</string>
+    <string name="categories">Categories</string>
 </resources>

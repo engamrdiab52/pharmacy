@@ -86,7 +86,7 @@ class HomeFragment : Fragment() {
                /* val a1 = listOf(Offer(medicine_image_url = "slider images/image_1.png"))
                 val b1 = listOf(ImageOfSlider(imageUrl = "slider images/image_1.png"))*/
                 val a1 = listOf(Offer())
-                val b1 = listOf(ImageOfSlider(imageUrl = "slider images/image_1.png"))
+                val b1 = listOf(ImageOfSlider())
                 homeEpoxyController.setData(b1, a1)
             }
         }

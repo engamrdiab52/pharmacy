@@ -2,13 +2,17 @@ package com.amrabdelhamiddiab.pharmacy_1.presentation.home
 
 import android.graphics.Color
 import android.media.Image
+import android.util.Log
 import com.airbnb.epoxy.EpoxyAsyncUtil
 import com.airbnb.epoxy.Typed2EpoxyController
 import com.airbnb.epoxy.TypedEpoxyController
 import com.airbnb.epoxy.carousel
 import com.amrabdelhamiddiab.core.domain.ImageOfSlider
+import com.amrabdelhamiddiab.core.domain.ListOfImages
+import com.amrabdelhamiddiab.core.domain.NameOfImages
 import com.amrabdelhamiddiab.core.domain.Offer
 import com.amrabdelhamiddiab.pharmacy_1.*
+import com.amrabdelhamiddiab.pharmacy_1.MainActivity.Companion.TAG
 import com.worldsnas.slider.slider
 
 class HomeEpoxyController(private val homeViewModel: HomeViewModel) : Typed2EpoxyController<List<ImageOfSlider>?, List<Offer>?>(
@@ -21,6 +25,7 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : Typed2Epox
         }
         //*************************************************
         slider {
+            val sliderList = imagesOfSlider?.filter { it.id.startsWith("i") }
             id("dot_indicator")
             //delay before every cycle if user is not scrolling
             cycleDelay(3_000)
@@ -32,7 +37,7 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : Typed2Epox
             indicatorDotColor(Color.BLUE)
             //this is a extension function not the constructor
             // it hase to be map function not forEach
-            imagesOfSlider?.mapIndexed { _, image ->
+            sliderList?.mapIndexed { _, image ->
                 CarocellBindingModel_().apply {
                     id(image.id)
                     image(image)
@@ -42,14 +47,26 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : Typed2Epox
                     it
                 )
             }
-            infinite(true)
+            //make fliker
+       /*     infinite(false)
             copier { oldModel ->
                 oldModel as CarocellBindingModel_
                 CarocellBindingModel_().apply {
                     id(oldModel.id())
                     image(oldModel.image())
                 }
-            }
+            }*/
+        }
+        categoriesTitle {
+            id("categories_title")
+        }
+        categories {
+            id("categories_cell")
+            url(NameOfImages())
+           /* val categoriesList = imagesOfSlider?.filter { it.id.startsWith("cat") }
+            val myListObject : ListOfImages = categoriesList?.let { ListOfImages(it) }!!*/
+         //   listOfImagesOfCategories(myListObject)
+          //  listOfImagesOfCategories(myListObject)
         }
         //**********************************************************
         offersTitle {
