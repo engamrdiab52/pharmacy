@@ -55,6 +55,13 @@ class PharmacyApplication : Application() {
                             databaseReference
                         )
                     )
+                ),
+                DownloadHomeScreenItems(
+                    RepositoryDownloadHomeScreenItems(
+                        DownloadHomeScreenItemsImpl(
+                            databaseReference
+                        )
+                    )
                 )
             )
         )

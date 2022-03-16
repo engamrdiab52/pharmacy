@@ -30,7 +30,7 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : Typed2Epox
             //delay before every cycle if user is not scrolling
             cycleDelay(3_000)
             //controll the indicator visibility
-            indicatorVisible(true)
+            indicatorVisible(false)
             //Front/Selected indicator dot color (if indicator visible)
             indicatorSelectedDotColor(Color.GRAY)
             //rest of indicator dot color (if indicator visible)

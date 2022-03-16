@@ -11,5 +11,6 @@ data class Interactions(
     val signInUser: SignInUser,
     val emailVerifiedState: EmailVerifiedState,
     val downloadOffers: DownloadOffers,
-    val downloadImagesOfSlider :DownloadImagesOfSlider
+    val downloadImagesOfSlider :DownloadImagesOfSlider,
+    val downloadHomeScreenItems: DownloadHomeScreenItems
 )
