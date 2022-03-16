@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -66,15 +67,34 @@ class HomeFragment : Fragment() {
                 binding.loadingIndecatorHome.visibility = View.GONE
             }
         }
-    /*    viewModel.listOfOffers.observe(viewLifecycleOwner) {
-            homeEpoxyController.setData(viewModel.listOfOfImagesOfSlider.value, it)
-            //  recyclerView.adapter = homeEpoxyController.adapter
-            Log.d(TAG, "6565656565656565656565" + it.toString())
+        viewModel.buttonMedicineClicked.observe(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_homeFragment_to_medicinesFragment)
         }
-        viewModel.listOfOfImagesOfSlider.observe(viewLifecycleOwner){
-         //   homeEpoxyController.setData(it, viewModel.listOfOffers.value)
-            homeEpoxyController.d
-        }*/
+        viewModel.buttonHealthClicked.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), "Health",Toast.LENGTH_SHORT).show()
+         //   findNavController().navigate(R.id.action_homeFragment_to_medicinesFragment)
+        }
+        viewModel.buttonAccessoriesClicked.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), "Accessories",Toast.LENGTH_SHORT).show()
+          //  findNavController().navigate(R.id.action_homeFragment_to_medicinesFragment)
+        }
+        viewModel.buttonBeautyCareClicked.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), "Beauty Care",Toast.LENGTH_SHORT).show()
+           // findNavController().navigate(R.id.action_homeFragment_to_medicinesFragment)
+        }
+        viewModel.buttonPersonalCareClicked.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), "Personal Care",Toast.LENGTH_SHORT).show()
+        //    findNavController().navigate(R.id.action_homeFragment_to_medicinesFragment)
+        }
+        /*    viewModel.listOfOffers.observe(viewLifecycleOwner) {
+                homeEpoxyController.setData(viewModel.listOfOfImagesOfSlider.value, it)
+                //  recyclerView.adapter = homeEpoxyController.adapter
+                Log.d(TAG, "6565656565656565656565" + it.toString())
+            }
+            viewModel.listOfOfImagesOfSlider.observe(viewLifecycleOwner){
+             //   homeEpoxyController.setData(it, viewModel.listOfOffers.value)
+                homeEpoxyController.d
+            }*/
         viewModel.listOfHomeScreenItems.observe(viewLifecycleOwner){
           //  Log.d(TAG, "AAAAA"+ a.toString() +"BBBBB"+ b.toString())
             homeEpoxyController.setData(it)

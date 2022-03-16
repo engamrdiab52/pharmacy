@@ -59,6 +59,21 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : TypedEpoxy
         categories {
             id("categories_cell")
             url(NameOfImages())
+            onClickMedicine{ _ ->
+                this@HomeEpoxyController.homeViewModel.buttonGoToMedicines()
+            }
+            onClickHealth { _ ->
+                this@HomeEpoxyController.homeViewModel.buttonGoToHealth()
+            }
+            onClickAccessories{_ ->
+                this@HomeEpoxyController.homeViewModel.buttonGoToAccessories()
+            }
+            onClickPersonalCare { _ ->
+                this@HomeEpoxyController.homeViewModel.buttonGoToPersonalCare()
+            }
+            onClickBeautyCare { _ ->
+                this@HomeEpoxyController.homeViewModel.buttonGoToBeautyCare()
+            }
            /* val categoriesList = imagesOfSlider?.filter { it.id.startsWith("cat") }
             val myListObject : ListOfImages = categoriesList?.let { ListOfImages(it) }!!*/
          //   listOfImagesOfCategories(myListObject)

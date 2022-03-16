@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="onClickContent"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="medicine"
+            type="com.amrabdelhamiddiab.core.domain.Medicine" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="1dp"
+        android:onClick="@{onClickContent}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:scaleType="fitCenter"
+                app:imageUrl="@{medicine.img_url_medicine}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_weight="5"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/txt_view_offer_medicine_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:lines="2"
+                android:maxLines="2"
+                android:text="@{medicine.name_en_Medicine}"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintVertical_weight="2" />
+
+            <TextView
+                android:id="@+id/txt_view_offer_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{medicine.price_medicine}"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="@color/red"
+                app:layout_constraintBottom_toTopOf="@+id/btn_offer_cell"
+                app:layout_constraintEnd_toEndOf="@+id/btn_offer_cell"
+                app:layout_constraintVertical_weight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_offer_cell"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="@string/add_to_cart"
+                android:textColor="@color/blue"
+                app:cornerRadius="8dp"
+                app:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_weight="1"
+                app:strokeColor="@color/blue"
+                app:strokeWidth="2dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

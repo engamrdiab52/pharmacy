@@ -62,6 +62,13 @@ class PharmacyApplication : Application() {
                             databaseReference
                         )
                     )
+                ),
+                DownloadAllMedicines(
+                    RepositoryDownloadAllMedicines(
+                        DownloadAllMedicinesImpl(
+                            databaseReference
+                        )
+                    )
                 )
             )
         )
