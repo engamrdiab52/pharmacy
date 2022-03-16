@@ -44,14 +44,14 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : TypedEpoxy
                 )
             }
             //make fliker
-       /*     infinite(false)
+            infinite(true)
             copier { oldModel ->
                 oldModel as CarocellBindingModel_
                 CarocellBindingModel_().apply {
                     id(oldModel.id())
                     image(oldModel.image())
                 }
-            }*/
+            }
         }
         categoriesTitle {
             id("categories_title")
@@ -69,7 +69,7 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : TypedEpoxy
             id("offers_title")
         }
         //*************************************************************
-        val offersList = homeScreenItems?.filter { it.medicine_image_url.startsWith("offers/") }
+        val offersList = homeScreenItems?.filter { it.medicine_image_url.startsWith("Offers/") }
 
         val listOfOffers = offersList?.mapIndexed { _, offer ->
             OfferCellBindingModel_().apply {
