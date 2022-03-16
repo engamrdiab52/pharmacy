@@ -14,7 +14,7 @@ class DownloadHomeScreenItemsImpl(private val databaseReference: DatabaseReferen
     override suspend fun downloadHomeScreenItems(): List<HomeScreenItem> {
         return try {
             _listOfHomeScreenItems.clear()
-            val snapshot = databaseReference.child("offers").get().await()
+            val snapshot = databaseReference.child("home_screen_items").get().await()
             snapshot.children.forEach {
                 val item = it.getValue(HomeScreenItem::class.java)
                 item?.let { it1 -> _listOfHomeScreenItems.add(it1) }

@@ -75,24 +75,13 @@ class HomeFragment : Fragment() {
          //   homeEpoxyController.setData(it, viewModel.listOfOffers.value)
             homeEpoxyController.d
         }*/
-        viewModel.pairMediatorLiveData.observe(viewLifecycleOwner){
-           val(a,b) = it
-            Log.d(TAG, "AAAAA"+ a.toString() +"BBBBB"+ b.toString())
-            if (a != null && b!= null){
-                homeEpoxyController.setData(b, a)
-                Log.d(TAG, "Inside ab pair33333333333333333333333333")
-            }else{
-                Log.d(TAG, "ONE is error")
-               /* val a1 = listOf(Offer(medicine_image_url = "slider images/image_1.png"))
-                val b1 = listOf(ImageOfSlider(imageUrl = "slider images/image_1.png"))*/
-                val a1 = listOf(Offer())
-                val b1 = listOf(ImageOfSlider())
-                homeEpoxyController.setData(b1, a1)
-            }
+        viewModel.listOfHomeScreenItems.observe(viewLifecycleOwner){
+          //  Log.d(TAG, "AAAAA"+ a.toString() +"BBBBB"+ b.toString())
+            homeEpoxyController.setData(it)
         }
      //   viewModel.downloadImagesOfSlider()
       //  viewModel.downloadOffers()
-        viewModel.downloadHomeContents()
+        viewModel.downloadHomeScreenItems()
         return binding.root
     }
 

@@ -5,7 +5,7 @@
     <data>
         <variable
             name="image"
-            type="com.amrabdelhamiddiab.core.domain.ImageOfSlider" />
+            type="com.amrabdelhamiddiab.core.domain.HomeScreenItem" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -24,7 +24,7 @@
                 android:id="@+id/image_of_slider"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:imageUrl="@{image.imageUrl}"
+                app:imageUrl="@{image.medicine_image_url}"
                 android:scaleType="fitCenter" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

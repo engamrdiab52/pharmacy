@@ -9,7 +9,7 @@
             type="android.view.View.OnClickListener" />
         <variable
             name="offer"
-            type="com.amrabdelhamiddiab.core.domain.Offer" />
+            type="com.amrabdelhamiddiab.core.domain.HomeScreenItem" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

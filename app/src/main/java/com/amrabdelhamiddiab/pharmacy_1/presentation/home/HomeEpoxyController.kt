@@ -1,31 +1,27 @@
 package com.amrabdelhamiddiab.pharmacy_1.presentation.home
 
 import android.graphics.Color
-import android.media.Image
 import android.util.Log
 import com.airbnb.epoxy.EpoxyAsyncUtil
-import com.airbnb.epoxy.Typed2EpoxyController
 import com.airbnb.epoxy.TypedEpoxyController
 import com.airbnb.epoxy.carousel
-import com.amrabdelhamiddiab.core.domain.ImageOfSlider
-import com.amrabdelhamiddiab.core.domain.ListOfImages
-import com.amrabdelhamiddiab.core.domain.NameOfImages
-import com.amrabdelhamiddiab.core.domain.Offer
+import com.amrabdelhamiddiab.core.domain.*
 import com.amrabdelhamiddiab.pharmacy_1.*
 import com.amrabdelhamiddiab.pharmacy_1.MainActivity.Companion.TAG
 import com.worldsnas.slider.slider
 
-class HomeEpoxyController(private val homeViewModel: HomeViewModel) : Typed2EpoxyController<List<ImageOfSlider>?, List<Offer>?>(
+class HomeEpoxyController(private val homeViewModel: HomeViewModel) : TypedEpoxyController<List<HomeScreenItem>?>(
     EpoxyAsyncUtil.getAsyncBackgroundHandler(),
     EpoxyAsyncUtil.getAsyncBackgroundHandler()
 ) {
-    override fun buildModels(imagesOfSlider: List<ImageOfSlider>?, offers: List<Offer>?) {
+    override fun buildModels(homeScreenItems: List<HomeScreenItem>?) {
         searchBar {
             id("search_bar")
         }
         //*************************************************
         slider {
-            val sliderList = imagesOfSlider?.filter { it.id.startsWith("i") }
+            val sliderList = homeScreenItems?.filter { it.medicine_image_url.startsWith("slider images/") }
+           Log.d(TAG, "sslslslslslsl0$homeScreenItems")
             id("dot_indicator")
             //delay before every cycle if user is not scrolling
             cycleDelay(3_000)
@@ -39,7 +35,7 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : Typed2Epox
             // it hase to be map function not forEach
             sliderList?.mapIndexed { _, image ->
                 CarocellBindingModel_().apply {
-                    id(image.id)
+                    id(image.id_medicine)
                     image(image)
                 }
             }?.let {
@@ -73,7 +69,9 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : Typed2Epox
             id("offers_title")
         }
         //*************************************************************
-        val listOfOffers = offers?.mapIndexed { _, offer ->
+        val offersList = homeScreenItems?.filter { it.medicine_image_url.startsWith("offers/") }
+
+        val listOfOffers = offersList?.mapIndexed { _, offer ->
             OfferCellBindingModel_().apply {
                 id(offer.id_medicine)
                 offer(offer)
