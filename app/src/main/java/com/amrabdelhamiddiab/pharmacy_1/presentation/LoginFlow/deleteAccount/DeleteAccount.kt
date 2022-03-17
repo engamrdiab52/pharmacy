@@ -1,4 +1,4 @@
-package com.amrabdelhamiddiab.pharmacy_1.presentation.deleteAccount
+package com.amrabdelhamiddiab.pharmacy_1.presentation.LoginFlow.deleteAccount
 
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.amrabdelhamiddiab.core.data.IPreferenceHelper
-import com.amrabdelhamiddiab.pharmacy_1.MainActivity
+import com.amrabdelhamiddiab.pharmacy_1.presentation.activity.MainActivity
 import com.amrabdelhamiddiab.pharmacy_1.R
 import com.amrabdelhamiddiab.pharmacy_1.databinding.FragmentDeleteAccountBinding
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PreferenceManager

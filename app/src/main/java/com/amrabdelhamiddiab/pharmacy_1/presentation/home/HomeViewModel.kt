@@ -6,8 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.amrabdelhamiddiab.core.domain.HomeScreenItem
 import com.amrabdelhamiddiab.core.domain.Medicine
-import com.amrabdelhamiddiab.pharmacy_1.MainActivity
-import com.amrabdelhamiddiab.pharmacy_1.MainActivity.Companion.TAG
+import com.amrabdelhamiddiab.pharmacy_1.presentation.activity.MainActivity.Companion.TAG
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.Interactions
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PharmacyViewModel
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.SingleLiveEvent

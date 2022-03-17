@@ -1,4 +1,4 @@
-package com.amrabdelhamiddiab.pharmacy_1.presentation.medicines
+package com.amrabdelhamiddiab.pharmacy_1.presentation.Items
 
 import android.os.Bundle
 import android.util.Log
@@ -7,17 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.amrabdelhamiddiab.pharmacy_1.MainActivity.Companion.TAG
+import com.amrabdelhamiddiab.pharmacy_1.presentation.activity.MainActivity.Companion.TAG
 import com.amrabdelhamiddiab.pharmacy_1.R
 import com.amrabdelhamiddiab.pharmacy_1.databinding.FragmentMedicinesBinding
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PharmacyViewModelFactory
 import com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeViewModel
 
-class MedicinesFragment : Fragment() {
+class ItemsFragment : Fragment() {
     private lateinit var binding: FragmentMedicinesBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var gridLayoutManager: GridLayoutManager
@@ -29,7 +28,7 @@ class MedicinesFragment : Fragment() {
         PharmacyViewModelFactory
 }
     private val medicineEpoxyController by lazy {
-        MedicinesEpoxyController(viewModel)
+        ItemsEpoxyController(viewModel)
     }
 
     override fun onCreateView(

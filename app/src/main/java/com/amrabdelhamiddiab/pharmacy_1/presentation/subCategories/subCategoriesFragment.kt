@@ -1,7 +1,6 @@
-package com.amrabdelhamiddiab.pharmacy_1.presentation.medicineSubCategories
+package com.amrabdelhamiddiab.pharmacy_1.presentation.subCategories
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,18 +12,17 @@ import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.amrabdelhamiddiab.core.domain.dataSources.ListOfSubCategoriesItems
-import com.amrabdelhamiddiab.pharmacy_1.MainActivity.Companion.TAG
 import com.amrabdelhamiddiab.pharmacy_1.R
 import com.amrabdelhamiddiab.pharmacy_1.databinding.FragmentMedicineSubCategoriesBinding
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PharmacyViewModelFactory
 import com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeViewModel
 
-class MedicineSubCategoriesFragment : Fragment() {
+class subCategoriesFragment : Fragment() {
     private lateinit var binding: FragmentMedicineSubCategoriesBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var gridLayoutManager: GridLayoutManager
     private val medicineSubCategoriesEpoxyController by lazy {
-        MedicineSubCategoriesEpoxyController(viewModel)
+        subCategoriesEpoxyController(viewModel)
     }
     private val viewModel: HomeViewModel by navGraphViewModels(R.id.nested_graph_home) {
         PharmacyViewModelFactory
@@ -67,8 +65,6 @@ class MedicineSubCategoriesFragment : Fragment() {
                 Toast.makeText(requireContext(), "Something wrong", Toast.LENGTH_SHORT).show()
             }
         }
-        viewModel.mainCategory.value?.let { Log.d(TAG,"7878787878778" +it) }
-        Log.d(TAG,"231231231231231"+ "${viewModel.mainCategory.value}")
         return binding.root
     }
 

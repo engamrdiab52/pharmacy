@@ -3,7 +3,6 @@ package com.amrabdelhamiddiab.pharmacy_1.framework.utilis
 import android.util.Log
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
-import com.amrabdelhamiddiab.pharmacy_1.framework.glide.GlideApp
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 

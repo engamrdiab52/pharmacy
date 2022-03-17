@@ -1,4 +1,4 @@
-package com.amrabdelhamiddiab.pharmacy_1
+package com.amrabdelhamiddiab.pharmacy_1.presentation.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

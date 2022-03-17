@@ -2,9 +2,8 @@ package com.amrabdelhamiddiab.pharmacy_1.framework.firebase
 
 import android.util.Log
 import com.amrabdelhamiddiab.core.data.IDownloadAllMedicines
-import com.amrabdelhamiddiab.core.domain.HomeScreenItem
 import com.amrabdelhamiddiab.core.domain.Medicine
-import com.amrabdelhamiddiab.pharmacy_1.MainActivity
+import com.amrabdelhamiddiab.pharmacy_1.presentation.activity.MainActivity
 import com.google.firebase.database.DatabaseReference
 import kotlinx.coroutines.tasks.await
 

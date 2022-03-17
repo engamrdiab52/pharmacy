@@ -1,16 +1,13 @@
-package com.amrabdelhamiddiab.pharmacy_1.presentation.medicines
+package com.amrabdelhamiddiab.pharmacy_1.presentation.Items
 
-import android.util.Log
 import com.airbnb.epoxy.EpoxyAsyncUtil
 import com.airbnb.epoxy.TypedEpoxyController
-import com.amrabdelhamiddiab.core.domain.HomeScreenItem
 import com.amrabdelhamiddiab.core.domain.Medicine
-import com.amrabdelhamiddiab.pharmacy_1.MainActivity.Companion.TAG
 import com.amrabdelhamiddiab.pharmacy_1.emptyCard
 import com.amrabdelhamiddiab.pharmacy_1.medicineCell
 import com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeViewModel
 
-class MedicinesEpoxyController(private val medicinesViewModel: HomeViewModel) :
+class ItemsEpoxyController(private val medicinesViewModel: HomeViewModel) :
     TypedEpoxyController<List<Medicine>?>(
         EpoxyAsyncUtil.getAsyncBackgroundHandler(),
         EpoxyAsyncUtil.getAsyncBackgroundHandler()
@@ -19,7 +16,6 @@ class MedicinesEpoxyController(private val medicinesViewModel: HomeViewModel) :
         if (!data.isNullOrEmpty()) {
             data.forEachIndexed { _, medicine ->
                 medicineCell {
-                    Log.d(TAG, "323232322323232$data")
                     id(medicine.id_medicine)
                     medicine(medicine)
                     onClickContent { _ ->

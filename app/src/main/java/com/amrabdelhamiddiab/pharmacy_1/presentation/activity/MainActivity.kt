@@ -1,4 +1,4 @@
-package com.amrabdelhamiddiab.pharmacy_1
+package com.amrabdelhamiddiab.pharmacy_1.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,6 +18,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PreferenceManager
 import com.amrabdelhamiddiab.core.data.IPreferenceHelper
+import com.amrabdelhamiddiab.pharmacy_1.R
 import com.amrabdelhamiddiab.pharmacy_1.databinding.ActivityMainBinding
 import com.amrabdelhamiddiab.pharmacy_1.databinding.AppBarMainBinding
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.MyDrawerController

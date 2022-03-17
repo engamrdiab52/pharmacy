@@ -3,8 +3,7 @@ package com.amrabdelhamiddiab.pharmacy_1.framework.firebase
 import android.util.Log
 import com.amrabdelhamiddiab.core.data.IDownloadImagesOfSlider
 import com.amrabdelhamiddiab.core.domain.ImageOfSlider
-import com.amrabdelhamiddiab.core.domain.Offer
-import com.amrabdelhamiddiab.pharmacy_1.MainActivity
+import com.amrabdelhamiddiab.pharmacy_1.presentation.activity.MainActivity
 import com.google.firebase.database.DatabaseReference
 import kotlinx.coroutines.tasks.await
 

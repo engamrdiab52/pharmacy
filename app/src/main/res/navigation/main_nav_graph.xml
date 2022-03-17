@@ -9,7 +9,7 @@
         app:startDestination="@id/loginFragment">
         <fragment
             android:id="@+id/loginFragment"
-            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.login.LoginFragment"
+            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.LoginFlow.login.LoginFragment"
             android:label="Login"
             tools:layout="@layout/fragment_login">
             <action
@@ -25,7 +25,7 @@
         </fragment>
         <fragment
             android:id="@+id/resetPasswordFragment"
-            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.resetPassword.ResetPasswordFragment"
+            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.LoginFlow.resetPassword.ResetPasswordFragment"
             android:label="ResetPasswordFragment"
             tools:layout="@layout/fragment_reset_password">
             <action
@@ -38,7 +38,7 @@
 
         <fragment
             android:id="@+id/signupFragment"
-            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.signup.SignupFragment"
+            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.LoginFlow.signup.SignupFragment"
             android:label="SignUp"
             tools:layout="@layout/fragment_signup">
             <action
@@ -77,7 +77,7 @@
             app:destination="@id/deleteAccount" />
         <fragment
             android:id="@+id/medicineSubCategoriesFragment"
-            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.medicineSubCategories.MedicineSubCategoriesFragment"
+            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.subCategories.subCategoriesFragment"
             android:label="MedicineSubCategoriesFragment" >
             <action
                 android:id="@+id/action_medicineSubCategoriesFragment2_to_medicinesFragment2"
@@ -85,12 +85,12 @@
         </fragment>
         <fragment
             android:id="@+id/medicinesFragment"
-            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.medicines.MedicinesFragment"
+            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.Items.ItemsFragment"
             android:label="MedicinesFragment" />
     </navigation>
     <fragment
         android:id="@+id/deleteAccount"
-        android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.deleteAccount.DeleteAccount"
+        android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.LoginFlow.deleteAccount.DeleteAccount"
         android:label="Delete Account"
         tools:layout="@layout/fragment_delete_account"/>
     <fragment

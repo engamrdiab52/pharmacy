@@ -2,7 +2,7 @@ package com.amrabdelhamiddiab.pharmacy_1.framework.firebase
 
 import android.util.Log
 import com.amrabdelhamiddiab.core.data.IVerifyUserEmail
-import com.amrabdelhamiddiab.pharmacy_1.MainActivity.Companion.TAG
+import com.amrabdelhamiddiab.pharmacy_1.presentation.activity.MainActivity.Companion.TAG
 import com.google.firebase.auth.FirebaseAuth
 
 class VerifyUserEmailImpl(private val mAuth: FirebaseAuth) : IVerifyUserEmail {

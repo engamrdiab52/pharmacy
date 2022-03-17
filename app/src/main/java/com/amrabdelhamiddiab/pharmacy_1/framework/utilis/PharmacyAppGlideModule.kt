@@ -1,4 +1,4 @@
-package com.amrabdelhamiddiab.pharmacy_1.framework.glide
+package com.amrabdelhamiddiab.pharmacy_1.framework.utilis
 
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Registry

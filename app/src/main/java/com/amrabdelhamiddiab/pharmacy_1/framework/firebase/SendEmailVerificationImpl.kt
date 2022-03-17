@@ -2,8 +2,7 @@ package com.amrabdelhamiddiab.pharmacy_1.framework.firebase
 
 import android.util.Log
 import com.amrabdelhamiddiab.core.data.ISendEmailVerification
-import com.amrabdelhamiddiab.core.useCases.SendEmailVerification
-import com.amrabdelhamiddiab.pharmacy_1.MainActivity.Companion.TAG
+import com.amrabdelhamiddiab.pharmacy_1.presentation.activity.MainActivity.Companion.TAG
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.tasks.await
 

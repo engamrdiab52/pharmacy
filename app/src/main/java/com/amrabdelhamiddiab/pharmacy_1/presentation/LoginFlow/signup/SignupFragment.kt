@@ -1,4 +1,4 @@
-package com.amrabdelhamiddiab.pharmacy_1.presentation.signup
+package com.amrabdelhamiddiab.pharmacy_1.presentation.LoginFlow.signup
 
 import android.os.Bundle
 import android.text.Editable
@@ -12,13 +12,13 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
-import com.amrabdelhamiddiab.pharmacy_1.MainActivity
-import com.amrabdelhamiddiab.pharmacy_1.MainActivity.Companion.TAG
+import com.amrabdelhamiddiab.pharmacy_1.presentation.activity.MainActivity
+import com.amrabdelhamiddiab.pharmacy_1.presentation.activity.MainActivity.Companion.TAG
 import com.amrabdelhamiddiab.pharmacy_1.R
 import com.amrabdelhamiddiab.pharmacy_1.databinding.FragmentSignupBinding
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PharmacyViewModelFactory
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.checkInternetConnection
-import com.amrabdelhamiddiab.pharmacy_1.presentation.LoginFlowViewModel
+import com.amrabdelhamiddiab.pharmacy_1.presentation.LoginFlow.LoginFlowViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 
 class SignupFragment : Fragment() {
