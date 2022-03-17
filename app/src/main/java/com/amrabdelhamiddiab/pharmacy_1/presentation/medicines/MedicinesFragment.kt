@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.amrabdelhamiddiab.pharmacy_1.R
 import com.amrabdelhamiddiab.pharmacy_1.databinding.FragmentMedicinesBinding
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PharmacyViewModelFactory
+import com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeViewModel
 
 class MedicinesFragment : Fragment() {
     private lateinit var binding: FragmentMedicinesBinding
@@ -22,7 +23,7 @@ class MedicinesFragment : Fragment() {
 /*    private val viewModel: MedicinesViewModel by lazy {
         ViewModelProvider(this, PharmacyViewModelFactory)[MedicinesViewModel::class.java]
     }*/
-    private val viewModel: MedicinesViewModel by navGraphViewModels(R.id.nested_graph_medicne_group){
+    private val viewModel: HomeViewModel by navGraphViewModels(R.id.nested_graph_home){
         PharmacyViewModelFactory
 }
     private val medicineEpoxyController by lazy {
@@ -55,7 +56,7 @@ class MedicinesFragment : Fragment() {
         }*/
         //   viewModel.downloadImagesOfSlider()
         //  viewModel.downloadOffers()
-        viewModel.downloadMedicines("medicine/${viewModel.urlSubCategory.value}")
+        viewModel.downloadMedicines("${viewModel.urlSubCategory.value}")
         return binding.root
     }
 }

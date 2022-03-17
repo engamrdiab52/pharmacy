@@ -10,7 +10,7 @@ import com.amrabdelhamiddiab.pharmacy_1.emptyCard
 import com.amrabdelhamiddiab.pharmacy_1.medicineCell
 import com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeViewModel
 
-class MedicinesEpoxyController(private val medicinesViewModel: MedicinesViewModel) :
+class MedicinesEpoxyController(private val medicinesViewModel: HomeViewModel) :
     TypedEpoxyController<List<Medicine>?>(
         EpoxyAsyncUtil.getAsyncBackgroundHandler(),
         EpoxyAsyncUtil.getAsyncBackgroundHandler()

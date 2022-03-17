@@ -1,31 +1,90 @@
 package com.amrabdelhamiddiab.core.domain.dataSources
 
 class ListOfSubCategoriesItems {
-    val listOfSubCategories: List<SubCategoriesIcons> = listOf(
+    val listOfMedicineSubCategories: List<SubCategoriesIcons> = listOf(
         SubCategoriesIcons(
-            "sub_cat_1", "main_categories/health.png"
+            "medicine/sub_cat_1", "main_categories/medicine.png",
+            "category 1"
         ), SubCategoriesIcons(
-            "sub_cat_2", "main_categories/health.png"
+            "medicine/sub_cat_2", "main_categories/medicine.png", "category 2"
         ), SubCategoriesIcons(
-            "sub_cat_3", "main_categories/health.png"
+            "medicine/sub_cat_3", "main_categories/medicine.png", "category 3"
         ), SubCategoriesIcons(
-            "sub_cat_4", "main_categories/health.png"
+            "medicine/sub_cat_4", "main_categories/medicine.png", "category 4"
         ), SubCategoriesIcons(
-            "sub_cat_5", "main_categories/health.png"
-        )/*, SubCategoriesIcons(
-            "category_6", "main_categories/health.png"
+            "medicine/sub_cat_5", "main_categories/medicine.png", "category 5"
+        )
+    )
+    val listOfAccessoriesSubCategories: List<SubCategoriesIcons> = listOf(
+        SubCategoriesIcons(
+            "accessories/sub_cat_1", "main_categories/accessories.png",
+            "category 1"
         ), SubCategoriesIcons(
-            "category_7", "main_categories/health.png"
+            "accessories/sub_cat_2", "main_categories/accessories.png",
+            "category 2"
         ), SubCategoriesIcons(
-            "category_8", "main_categories/health.png"
+            "accessories/sub_cat_3", "main_categories/accessories.png",
+            "category 3"
         ), SubCategoriesIcons(
-            "category_9", "main_categories/health.png"
+            "accessories/sub_cat_4", "main_categories/accessories.png",
+            "category 4"
         ), SubCategoriesIcons(
-            "category_10", "main_categories/health.png"
+            "accessories/sub_cat_5", "main_categories/accessories.png",
+            "category 5"
+        )
+    )
+    val listOfHealthSubCategories: List<SubCategoriesIcons> = listOf(
+        SubCategoriesIcons(
+            "health/sub_cat_1", "main_categories/health.png",
+            "category 1"
         ), SubCategoriesIcons(
-            "category_11", "main_categories/health.png"
+            "health/sub_cat_2", "main_categories/health.png",
+            "category 2"
         ), SubCategoriesIcons(
-            "category_12", "main_categories/health.png"
-        )*/
+            "health/sub_cat_3", "main_categories/health.png",
+            "category 3"
+        ), SubCategoriesIcons(
+            "health/sub_cat_4", "main_categories/health.png",
+            "category 4"
+        ), SubCategoriesIcons(
+            "health/sub_cat_5", "main_categories/health.png",
+            "category 5"
+        )
+    )
+    val listOfPersonalCareSubCategories: List<SubCategoriesIcons> = listOf(
+        SubCategoriesIcons(
+            "personal/sub_cat_1", "main_categories/personal_care.png",
+            "category 1"
+        ), SubCategoriesIcons(
+            "personal/sub_cat_2", "main_categories/personal_care.png",
+            "category 2"
+        ), SubCategoriesIcons(
+            "personal/sub_cat_3", "main_categories/personal_care.png",
+            "category 3"
+        ), SubCategoriesIcons(
+            "personal/sub_cat_4", "main_categories/personal_care.png",
+            "category 4"
+        ), SubCategoriesIcons(
+            "personal/sub_cat_5", "main_categories/personal_care.png",
+            "category 5"
+        )
+    )
+    val listOfBeautyCareSubCategories: List<SubCategoriesIcons> = listOf(
+        SubCategoriesIcons(
+            "beauty/sub_cat_1", "main_categories/beauty_care.png",
+            "category 1"
+        ), SubCategoriesIcons(
+            "beauty/sub_cat_2", "main_categories/beauty_care.png",
+            "category 2"
+        ), SubCategoriesIcons(
+            "beauty/sub_cat_3", "main_categories/beauty_care.png",
+            "category 3"
+        ), SubCategoriesIcons(
+            "beauty/sub_cat_4", "main_categories/beauty_care.png",
+            "category 4"
+        ), SubCategoriesIcons(
+            "beauty/sub_cat_5", "main_categories/beauty_care.png",
+            "category 5"
+        )
     )
 }

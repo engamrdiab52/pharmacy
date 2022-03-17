@@ -5,9 +5,9 @@ import com.airbnb.epoxy.TypedEpoxyController
 import com.amrabdelhamiddiab.core.domain.dataSources.SubCategoriesIcons
 import com.amrabdelhamiddiab.pharmacy_1.emptyCard
 import com.amrabdelhamiddiab.pharmacy_1.medicineSubCategories
-import com.amrabdelhamiddiab.pharmacy_1.presentation.medicines.MedicinesViewModel
+import com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeViewModel
 
-class MedicineSubCategoriesEpoxyController(private val medicinesViewModel: MedicinesViewModel) :
+class MedicineSubCategoriesEpoxyController(private val medicinesViewModel: HomeViewModel) :
     TypedEpoxyController<List<SubCategoriesIcons>?>(
         EpoxyAsyncUtil.getAsyncBackgroundHandler(),
         EpoxyAsyncUtil.getAsyncBackgroundHandler()
@@ -16,11 +16,11 @@ class MedicineSubCategoriesEpoxyController(private val medicinesViewModel: Medic
         if (!data.isNullOrEmpty()) {
             data.forEachIndexed { _, subCategory ->
                 medicineSubCategories {
-                    id(subCategory.nameOfSubCategory)
+                    id(subCategory.urlOfSubCategory)
                     subCategoriesIcon(subCategory)
                     onClickContent { _ ->
                         this@MedicineSubCategoriesEpoxyController.medicinesViewModel.setUrlOfSubCategory(
-                            subCategory.nameOfSubCategory
+                            subCategory.urlOfSubCategory
                         )
                         this@MedicineSubCategoriesEpoxyController.medicinesViewModel.subCategoryIconClick()
 

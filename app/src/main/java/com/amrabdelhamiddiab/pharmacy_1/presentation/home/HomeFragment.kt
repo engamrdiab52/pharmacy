@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.amrabdelhamiddiab.core.data.IPreferenceHelper
@@ -39,8 +40,8 @@ class HomeFragment : Fragment() {
     private val homeEpoxyController by lazy {
         HomeEpoxyController(viewModel)
     }
-    private val viewModel: HomeViewModel by lazy {
-        ViewModelProvider(this, PharmacyViewModelFactory)[HomeViewModel::class.java]
+    private val viewModel: HomeViewModel by navGraphViewModels(R.id.nested_graph_home){
+        PharmacyViewModelFactory
     }
 
     override fun onCreateView(
@@ -66,21 +67,25 @@ class HomeFragment : Fragment() {
             }
         }
         viewModel.buttonMedicineClicked.observe(viewLifecycleOwner) {
-            findNavController().navigate(R.id.action_homeFragment_to_nested_graph_medicne_group)
+            findNavController().navigate(R.id.action_homeFragment_to_medicineSubCategoriesFragment2)
         }
         viewModel.buttonHealthClicked.observe(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_homeFragment_to_medicineSubCategoriesFragment2)
             Toast.makeText(requireContext(), "Health",Toast.LENGTH_SHORT).show()
          //   findNavController().navigate(R.id.action_homeFragment_to_medicinesFragment)
         }
         viewModel.buttonAccessoriesClicked.observe(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_homeFragment_to_medicineSubCategoriesFragment2)
             Toast.makeText(requireContext(), "Accessories",Toast.LENGTH_SHORT).show()
           //  findNavController().navigate(R.id.action_homeFragment_to_medicinesFragment)
         }
         viewModel.buttonBeautyCareClicked.observe(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_homeFragment_to_medicineSubCategoriesFragment2)
             Toast.makeText(requireContext(), "Beauty Care",Toast.LENGTH_SHORT).show()
            // findNavController().navigate(R.id.action_homeFragment_to_medicinesFragment)
         }
         viewModel.buttonPersonalCareClicked.observe(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_homeFragment_to_medicineSubCategoriesFragment2)
             Toast.makeText(requireContext(), "Personal Care",Toast.LENGTH_SHORT).show()
         //    findNavController().navigate(R.id.action_homeFragment_to_medicinesFragment)
         }

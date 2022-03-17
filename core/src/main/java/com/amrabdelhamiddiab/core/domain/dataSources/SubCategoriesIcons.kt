@@ -1,6 +1,7 @@
 package com.amrabdelhamiddiab.core.domain.dataSources
 
 data class SubCategoriesIcons(
-    val nameOfSubCategory: String = "",
-    val urlOfSubCategoryImage: String = ""
+    val urlOfSubCategory: String = "",
+    val urlOfSubCategoryImage: String = "",
+    val nameOfSubCategory: String = ""
 )

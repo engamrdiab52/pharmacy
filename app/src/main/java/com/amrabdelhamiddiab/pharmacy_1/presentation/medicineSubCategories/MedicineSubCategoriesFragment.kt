@@ -1,20 +1,23 @@
 package com.amrabdelhamiddiab.pharmacy_1.presentation.medicineSubCategories
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.amrabdelhamiddiab.core.domain.dataSources.ListOfSubCategoriesItems
+import com.amrabdelhamiddiab.pharmacy_1.MainActivity.Companion.TAG
 import com.amrabdelhamiddiab.pharmacy_1.R
 import com.amrabdelhamiddiab.pharmacy_1.databinding.FragmentMedicineSubCategoriesBinding
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PharmacyViewModelFactory
-import com.amrabdelhamiddiab.pharmacy_1.presentation.medicines.MedicinesViewModel
+import com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeViewModel
 
 class MedicineSubCategoriesFragment : Fragment() {
     private lateinit var binding: FragmentMedicineSubCategoriesBinding
@@ -23,9 +26,10 @@ class MedicineSubCategoriesFragment : Fragment() {
     private val medicineSubCategoriesEpoxyController by lazy {
         MedicineSubCategoriesEpoxyController(viewModel)
     }
-    private val viewModel: MedicinesViewModel by navGraphViewModels(R.id.nested_graph_medicne_group){
+    private val viewModel: HomeViewModel by navGraphViewModels(R.id.nested_graph_home) {
         PharmacyViewModelFactory
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,10 +44,31 @@ class MedicineSubCategoriesFragment : Fragment() {
         gridLayoutManager = GridLayoutManager(context, 3)
         recyclerView.layoutManager = gridLayoutManager
         recyclerView.adapter = medicineSubCategoriesEpoxyController.adapter
-        viewModel.subCategoryIconClicked.observe(viewLifecycleOwner){
-            findNavController().navigate(R.id.action_medicineSubCategoriesFragment_to_medicinesFragment)
+        viewModel.subCategoryIconClicked.observe(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_medicineSubCategoriesFragment2_to_medicinesFragment2)
         }
-        medicineSubCategoriesEpoxyController.setData(ListOfSubCategoriesItems().listOfSubCategories)
+        when (viewModel.mainCategory.value) {
+            "MEDICINE" -> {
+                medicineSubCategoriesEpoxyController.setData(ListOfSubCategoriesItems().listOfMedicineSubCategories)
+            }
+            "HEALTH" -> {
+                medicineSubCategoriesEpoxyController.setData(ListOfSubCategoriesItems().listOfHealthSubCategories)
+            }
+            "ACCESSORIES" -> {
+                medicineSubCategoriesEpoxyController.setData(ListOfSubCategoriesItems().listOfAccessoriesSubCategories)
+            }
+            "PERSONAL CARE" -> {
+                medicineSubCategoriesEpoxyController.setData(ListOfSubCategoriesItems().listOfPersonalCareSubCategories)
+            }
+            "BEAUTY CARE" -> {
+                medicineSubCategoriesEpoxyController.setData(ListOfSubCategoriesItems().listOfBeautyCareSubCategories)
+            }
+            else -> {
+                Toast.makeText(requireContext(), "Something wrong", Toast.LENGTH_SHORT).show()
+            }
+        }
+        viewModel.mainCategory.value?.let { Log.d(TAG,"7878787878778" +it) }
+        Log.d(TAG,"231231231231231"+ "${viewModel.mainCategory.value}")
         return binding.root
     }
 
