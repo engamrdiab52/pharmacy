@@ -17,9 +17,21 @@ class MedicinesViewModel(application: Application, dependencies: Interactions) :
     private val _listOfMedicines = SingleLiveEvent<List<Medicine>?>()
     val listOfMedicines: LiveData<List<Medicine>?> get() = _listOfMedicines
 
+    private val _urlSubCategory = SingleLiveEvent<String>()
+    val urlSubCategory: LiveData<String> get() = _urlSubCategory
+
     private val _downloading = SingleLiveEvent<Boolean>()
     val downloading: LiveData<Boolean> get() = _downloading
 
+    private val _subCategoryIconClicked = SingleLiveEvent<Boolean>()
+    val subCategoryIconClicked: LiveData<Boolean> get() = _subCategoryIconClicked
+
+    fun subCategoryIconClick() {
+        _subCategoryIconClicked.value = true
+    }
+    fun setUrlOfSubCategory(url: String) {
+        _urlSubCategory.value = url
+    }
     fun downloadMedicines(url: String) {
         viewModelScope.launch(Dispatchers.IO) {
             _downloading.postValue(true)
@@ -27,5 +39,6 @@ class MedicinesViewModel(application: Application, dependencies: Interactions) :
             _downloading.postValue(false)
         }
     }
+
 
 }

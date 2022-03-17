@@ -5,8 +5,9 @@ import com.airbnb.epoxy.TypedEpoxyController
 import com.amrabdelhamiddiab.core.domain.dataSources.SubCategoriesIcons
 import com.amrabdelhamiddiab.pharmacy_1.emptyCard
 import com.amrabdelhamiddiab.pharmacy_1.medicineSubCategories
+import com.amrabdelhamiddiab.pharmacy_1.presentation.medicines.MedicinesViewModel
 
-class MedicineSubCategoriesEpoxyController :
+class MedicineSubCategoriesEpoxyController(private val medicinesViewModel: MedicinesViewModel) :
     TypedEpoxyController<List<SubCategoriesIcons>?>(
         EpoxyAsyncUtil.getAsyncBackgroundHandler(),
         EpoxyAsyncUtil.getAsyncBackgroundHandler()
@@ -18,17 +19,21 @@ class MedicineSubCategoriesEpoxyController :
                     id(subCategory.nameOfSubCategory)
                     subCategoriesIcon(subCategory)
                     onClickContent { _ ->
+                        this@MedicineSubCategoriesEpoxyController.medicinesViewModel.setUrlOfSubCategory(
+                            subCategory.nameOfSubCategory
+                        )
+                        this@MedicineSubCategoriesEpoxyController.medicinesViewModel.subCategoryIconClick()
 
                     }
                 }
-             /*    {
-                    Log.d(MainActivity.TAG, "323232322323232$data")
-                    id(medicine.id_medicine)
-                    medicine(medicine)
-                    onClickContent { _ ->
+                /*    {
+                       Log.d(MainActivity.TAG, "323232322323232$data")
+                       id(medicine.id_medicine)
+                       medicine(medicine)
+                       onClickContent { _ ->
 
-                    }
-                }*/
+                       }
+                   }*/
             }
         } else {
             emptyCard {

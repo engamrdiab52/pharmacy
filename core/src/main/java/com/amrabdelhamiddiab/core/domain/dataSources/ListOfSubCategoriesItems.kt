@@ -3,16 +3,16 @@ package com.amrabdelhamiddiab.core.domain.dataSources
 class ListOfSubCategoriesItems {
     val listOfSubCategories: List<SubCategoriesIcons> = listOf(
         SubCategoriesIcons(
-            "category_1", "main_categories/health.png"
+            "sub_cat_1", "main_categories/health.png"
         ), SubCategoriesIcons(
-            "category_2", "main_categories/health.png"
+            "sub_cat_2", "main_categories/health.png"
         ), SubCategoriesIcons(
-            "category_3", "main_categories/health.png"
+            "sub_cat_3", "main_categories/health.png"
         ), SubCategoriesIcons(
-            "category_4", "main_categories/health.png"
+            "sub_cat_4", "main_categories/health.png"
         ), SubCategoriesIcons(
-            "category_5", "main_categories/health.png"
-        ), SubCategoriesIcons(
+            "sub_cat_5", "main_categories/health.png"
+        )/*, SubCategoriesIcons(
             "category_6", "main_categories/health.png"
         ), SubCategoriesIcons(
             "category_7", "main_categories/health.png"
@@ -26,6 +26,6 @@ class ListOfSubCategoriesItems {
             "category_11", "main_categories/health.png"
         ), SubCategoriesIcons(
             "category_12", "main_categories/health.png"
-        )
+        )*/
     )
 }

@@ -23,7 +23,6 @@ class MedicinesEpoxyController(private val medicinesViewModel: MedicinesViewMode
                     id(medicine.id_medicine)
                     medicine(medicine)
                     onClickContent { _ ->
-
                     }
                 }
             }

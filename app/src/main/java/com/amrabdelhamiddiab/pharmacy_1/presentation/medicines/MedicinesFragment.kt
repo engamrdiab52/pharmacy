@@ -50,9 +50,12 @@ class MedicinesFragment : Fragment() {
             //  Log.d(TAG, "AAAAA"+ a.toString() +"BBBBB"+ b.toString())
             medicineEpoxyController.setData(it)
         }
+    /*    viewModel.urlSubCategory.observe(viewLifecycleOwner){
+            viewModel.downloadMedicines("medicine/$it")
+        }*/
         //   viewModel.downloadImagesOfSlider()
         //  viewModel.downloadOffers()
-        viewModel.downloadMedicines("medicine")
+        viewModel.downloadMedicines("medicine/${viewModel.urlSubCategory.value}")
         return binding.root
     }
 }
