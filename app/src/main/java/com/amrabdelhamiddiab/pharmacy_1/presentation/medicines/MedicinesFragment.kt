@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.amrabdelhamiddiab.pharmacy_1.R
@@ -18,9 +19,12 @@ class MedicinesFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var gridLayoutManager: GridLayoutManager
 
-    private val viewModel: MedicinesViewModel by lazy {
+/*    private val viewModel: MedicinesViewModel by lazy {
         ViewModelProvider(this, PharmacyViewModelFactory)[MedicinesViewModel::class.java]
-    }
+    }*/
+    private val viewModel: MedicinesViewModel by navGraphViewModels(R.id.nested_graph_medicne_group){
+        PharmacyViewModelFactory
+}
     private val medicineEpoxyController by lazy {
         MedicinesEpoxyController(viewModel)
     }

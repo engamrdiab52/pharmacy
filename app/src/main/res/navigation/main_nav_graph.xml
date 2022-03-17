@@ -62,12 +62,10 @@
             android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeFragment"
             android:label="Home"
             tools:layout="@layout/fragment_home" >
+
             <action
-                android:id="@+id/action_homeFragment_to_medicinesFragment"
-                app:destination="@id/medicinesFragment" />
-            <action
-                android:id="@+id/action_homeFragment_to_medicineSubCategoriesFragment"
-                app:destination="@id/medicineSubCategoriesFragment" />
+                android:id="@+id/action_homeFragment_to_nested_graph_medicne_group"
+                app:destination="@id/nested_graph_medicne_group" />
         </fragment>
         <action
             android:id="@+id/action_global_nested_graph_login"
@@ -78,14 +76,21 @@
         <action
             android:id="@+id/action_global_deleteAccount"
             app:destination="@id/deleteAccount" />
-        <fragment
-            android:id="@+id/medicinesFragment"
-            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.medicines.MedicinesFragment"
-            android:label="MedicinesFragment" />
-        <fragment
-            android:id="@+id/medicineSubCategoriesFragment"
-            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.medicineSubCategories.MedicineSubCategoriesFragment"
-            android:label="MedicineSubCategoriesFragment" />
+        <navigation android:id="@+id/nested_graph_medicne_group"
+            app:startDestination="@id/medicineSubCategoriesFragment">
+            <fragment
+                android:id="@+id/medicineSubCategoriesFragment"
+                android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.medicineSubCategories.MedicineSubCategoriesFragment"
+                android:label="MedicineSubCategoriesFragment" >
+                <action
+                    android:id="@+id/action_medicineSubCategoriesFragment_to_medicinesFragment"
+                    app:destination="@id/medicinesFragment" />
+            </fragment>
+            <fragment
+                android:id="@+id/medicinesFragment"
+                android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.medicines.MedicinesFragment"
+                android:label="MedicinesFragment" />
+        </navigation>
     </navigation>
     <fragment
         android:id="@+id/deleteAccount"
