@@ -108,7 +108,7 @@ class HomeViewModel(application: Application, dependencies: Interactions) :
     fun subCategoryIconClick() {
         _subCategoryIconClicked.value = true
     }
-    fun setUrlOfSubCategory(url: String) {
+    fun putUrlOfSubCategory(url: String) {
         _urlSubCategory.value = url
     }
     fun downloadMedicines(url: String) {
@@ -116,6 +116,7 @@ class HomeViewModel(application: Application, dependencies: Interactions) :
             _downloading.postValue(true)
             _listOfMedicines.postValue(dependencies.downloadAllMedicines(url))
             _downloading.postValue(false)
+            Log.d(TAG,"qqqqqqqqqqqq"+ listOfMedicines.value.toString())
         }
     }
 

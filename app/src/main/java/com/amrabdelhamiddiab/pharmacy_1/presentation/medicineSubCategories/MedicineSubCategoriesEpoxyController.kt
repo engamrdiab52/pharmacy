@@ -19,7 +19,7 @@ class MedicineSubCategoriesEpoxyController(private val medicinesViewModel: HomeV
                     id(subCategory.urlOfSubCategory)
                     subCategoriesIcon(subCategory)
                     onClickContent { _ ->
-                        this@MedicineSubCategoriesEpoxyController.medicinesViewModel.setUrlOfSubCategory(
+                        this@MedicineSubCategoriesEpoxyController.medicinesViewModel.putUrlOfSubCategory(
                             subCategory.urlOfSubCategory
                         )
                         this@MedicineSubCategoriesEpoxyController.medicinesViewModel.subCategoryIconClick()
