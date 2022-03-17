@@ -15,7 +15,7 @@ class PharmacyApplication : Application() {
         Firebase.database.setPersistenceEnabled(true)
         val databaseReference = Firebase.database.reference
         val mAuth = FirebaseAuth.getInstance()
-        LoginFlowViewModelFactory.inject(
+        PharmacyViewModelFactory.inject(
             this, Interactions(
                 ResetUserPassword(
                     RepositoryResetUserPassword(

@@ -4,13 +4,13 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-object LoginFlowViewModelFactory : ViewModelProvider.Factory {
+object PharmacyViewModelFactory : ViewModelProvider.Factory {
     lateinit var application: Application
      lateinit var dependencies: Interactions
 
     fun inject(application: Application, dependencies: Interactions) {
-        LoginFlowViewModelFactory.application = application
-        LoginFlowViewModelFactory.dependencies = dependencies
+        PharmacyViewModelFactory.application = application
+        PharmacyViewModelFactory.dependencies = dependencies
     }
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

@@ -13,7 +13,7 @@ import androidx.navigation.navGraphViewModels
 import com.amrabdelhamiddiab.pharmacy_1.MainActivity
 import com.amrabdelhamiddiab.pharmacy_1.R
 import com.amrabdelhamiddiab.pharmacy_1.databinding.FragmentResetPasswordBinding
-import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.LoginFlowViewModelFactory
+import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PharmacyViewModelFactory
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.checkInternetConnection
 import com.amrabdelhamiddiab.pharmacy_1.presentation.LoginFlowViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
@@ -21,7 +21,7 @@ import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 
 class ResetPasswordFragment : Fragment() {
     private val viewModel: LoginFlowViewModel by navGraphViewModels(R.id.nested_graph_login) {
-        LoginFlowViewModelFactory
+        PharmacyViewModelFactory
     }
     private lateinit var binding: FragmentResetPasswordBinding
     private var validEmail: Boolean = false

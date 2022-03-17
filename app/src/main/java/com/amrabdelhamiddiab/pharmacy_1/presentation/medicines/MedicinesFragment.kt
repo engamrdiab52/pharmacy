@@ -8,15 +8,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.epoxy.EpoxyRecyclerView
 import com.amrabdelhamiddiab.pharmacy_1.R
-import com.amrabdelhamiddiab.pharmacy_1.databinding.FragmentHomeBinding
 import com.amrabdelhamiddiab.pharmacy_1.databinding.FragmentMedicinesBinding
-import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.LoginFlowViewModelFactory
-import com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeEpoxyController
-import com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeViewModel
+import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PharmacyViewModelFactory
 
 class MedicinesFragment : Fragment() {
     private lateinit var binding: FragmentMedicinesBinding
@@ -24,7 +19,7 @@ class MedicinesFragment : Fragment() {
     private lateinit var gridLayoutManager: GridLayoutManager
 
     private val viewModel: MedicinesViewModel by lazy {
-        ViewModelProvider(this, LoginFlowViewModelFactory)[MedicinesViewModel::class.java]
+        ViewModelProvider(this, PharmacyViewModelFactory)[MedicinesViewModel::class.java]
     }
     private val medicineEpoxyController by lazy {
         MedicinesEpoxyController(viewModel)
