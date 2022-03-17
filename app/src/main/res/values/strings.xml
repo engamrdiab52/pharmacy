@@ -62,4 +62,5 @@
     <string name="personal_care">personal care</string>
     <string name="accessories">Accessories</string>
     <string name="categories">Categories</string>
+    <string name="add_favorite">ADD To Favorite</string>
 </resources>
