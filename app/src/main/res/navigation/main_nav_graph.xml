@@ -5,7 +5,8 @@
     android:id="@+id/main_nav_graph"
     app:startDestination="@id/nested_graph_home">
 
-    <navigation android:id="@+id/nested_graph_login"
+    <navigation
+        android:id="@+id/nested_graph_login"
         app:startDestination="@id/loginFragment">
         <fragment
             android:id="@+id/loginFragment"
@@ -16,7 +17,7 @@
                 android:id="@+id/action_loginFragment_to_resetPasswordFragment"
                 app:destination="@id/resetPasswordFragment"
                 app:launchSingleTop="true"
-                app:popUpTo="@id/loginFragment"/>
+                app:popUpTo="@id/loginFragment" />
             <action
                 android:id="@+id/action_loginFragment_to_signupFragment"
                 app:destination="@id/signupFragment"
@@ -33,7 +34,7 @@
                 app:destination="@id/loginFragment"
                 app:launchSingleTop="true"
                 app:popUpTo="@id/resetPasswordFragment"
-                app:popUpToInclusive="true"/>
+                app:popUpToInclusive="true" />
         </fragment>
 
         <fragment
@@ -46,39 +47,44 @@
                 app:destination="@id/loginFragment"
                 app:launchSingleTop="true"
                 app:popUpTo="@id/signupFragment"
-                app:popUpToInclusive="true"/>
+                app:popUpToInclusive="true" />
         </fragment>
         <action
             android:id="@+id/action_global_nested_graph_home"
             app:destination="@id/nested_graph_home"
             app:launchSingleTop="true"
             app:popUpTo="@id/nested_graph_login"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
     </navigation>
-    <navigation android:id="@+id/nested_graph_home"
+    <navigation
+        android:id="@+id/nested_graph_home"
         app:startDestination="@id/homeFragment">
         <fragment
             android:id="@+id/homeFragment"
             android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeFragment"
             android:label="Home"
-            tools:layout="@layout/fragment_home" >
+            tools:layout="@layout/fragment_home">
             <action
                 android:id="@+id/action_homeFragment_to_medicineSubCategoriesFragment2"
                 app:destination="@id/medicineSubCategoriesFragment" />
+           <action
+                android:id="@+id/action_homeFragment_to_nested_graph_login"
+                app:destination="@id/nested_graph_login"
+               />
         </fragment>
         <action
             android:id="@+id/action_global_nested_graph_login"
             app:destination="@id/nested_graph_login"
             app:launchSingleTop="true"
             app:popUpTo="@id/nested_graph_home"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_global_deleteAccount"
             app:destination="@id/deleteAccount" />
         <fragment
             android:id="@+id/medicineSubCategoriesFragment"
             android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.subCategories.subCategoriesFragment"
-            android:label="MedicineSubCategoriesFragment" >
+            android:label="MedicineSubCategoriesFragment">
             <action
                 android:id="@+id/action_medicineSubCategoriesFragment2_to_medicinesFragment2"
                 app:destination="@id/medicinesFragment" />
@@ -92,7 +98,7 @@
         android:id="@+id/deleteAccount"
         android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.LoginFlow.deleteAccount.DeleteAccount"
         android:label="Delete Account"
-        tools:layout="@layout/fragment_delete_account"/>
+        tools:layout="@layout/fragment_delete_account" />
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.cart.CartFragment"

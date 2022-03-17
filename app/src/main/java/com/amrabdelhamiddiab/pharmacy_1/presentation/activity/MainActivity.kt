@@ -16,12 +16,12 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
-import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PreferenceManager
 import com.amrabdelhamiddiab.core.data.IPreferenceHelper
 import com.amrabdelhamiddiab.pharmacy_1.R
 import com.amrabdelhamiddiab.pharmacy_1.databinding.ActivityMainBinding
 import com.amrabdelhamiddiab.pharmacy_1.databinding.AppBarMainBinding
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.MyDrawerController
+import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PreferenceManager
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.checkInternetConnection
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
