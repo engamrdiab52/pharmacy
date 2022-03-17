@@ -1,4 +1,4 @@
-package com.amrabdelhamiddiab.core.domain
+package com.amrabdelhamiddiab.core.domain.dataSources
 
 data class NameOfImages(
     val health: String = "main_categories/health.png",

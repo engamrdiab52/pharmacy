@@ -65,6 +65,9 @@
             <action
                 android:id="@+id/action_homeFragment_to_medicinesFragment"
                 app:destination="@id/medicinesFragment" />
+            <action
+                android:id="@+id/action_homeFragment_to_medicineSubCategoriesFragment"
+                app:destination="@id/medicineSubCategoriesFragment" />
         </fragment>
         <action
             android:id="@+id/action_global_nested_graph_login"
@@ -79,6 +82,10 @@
             android:id="@+id/medicinesFragment"
             android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.medicines.MedicinesFragment"
             android:label="MedicinesFragment" />
+        <fragment
+            android:id="@+id/medicineSubCategoriesFragment"
+            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.medicineSubCategories.MedicineSubCategoriesFragment"
+            android:label="MedicineSubCategoriesFragment" />
     </navigation>
     <fragment
         android:id="@+id/deleteAccount"

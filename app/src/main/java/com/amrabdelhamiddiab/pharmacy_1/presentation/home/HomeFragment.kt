@@ -68,7 +68,7 @@ class HomeFragment : Fragment() {
             }
         }
         viewModel.buttonMedicineClicked.observe(viewLifecycleOwner) {
-            findNavController().navigate(R.id.action_homeFragment_to_medicinesFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_medicineSubCategoriesFragment)
         }
         viewModel.buttonHealthClicked.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), "Health",Toast.LENGTH_SHORT).show()

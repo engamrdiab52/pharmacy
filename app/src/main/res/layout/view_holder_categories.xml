@@ -21,7 +21,7 @@
             type="android.view.View.OnClickListener" />
         <variable
             name="url"
-            type="com.amrabdelhamiddiab.core.domain.NameOfImages" />
+            type="com.amrabdelhamiddiab.core.domain.dataSources.NameOfImages" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

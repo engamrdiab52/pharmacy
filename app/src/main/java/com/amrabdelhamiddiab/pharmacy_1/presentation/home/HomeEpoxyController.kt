@@ -6,6 +6,7 @@ import com.airbnb.epoxy.EpoxyAsyncUtil
 import com.airbnb.epoxy.TypedEpoxyController
 import com.airbnb.epoxy.carousel
 import com.amrabdelhamiddiab.core.domain.*
+import com.amrabdelhamiddiab.core.domain.dataSources.NameOfImages
 import com.amrabdelhamiddiab.pharmacy_1.*
 import com.amrabdelhamiddiab.pharmacy_1.MainActivity.Companion.TAG
 import com.worldsnas.slider.slider
