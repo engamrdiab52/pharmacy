@@ -11,18 +11,20 @@ import com.amrabdelhamiddiab.pharmacy_1.*
 import com.amrabdelhamiddiab.pharmacy_1.presentation.activity.MainActivity.Companion.TAG
 import com.worldsnas.slider.slider
 
-class HomeEpoxyController(private val homeViewModel: HomeViewModel) : TypedEpoxyController<List<HomeScreenItem>?>(
-    EpoxyAsyncUtil.getAsyncBackgroundHandler(),
-    EpoxyAsyncUtil.getAsyncBackgroundHandler()
-) {
+class HomeEpoxyController(private val homeViewModel: HomeViewModel) :
+    TypedEpoxyController<List<HomeScreenItem>?>(
+        EpoxyAsyncUtil.getAsyncBackgroundHandler(),
+        EpoxyAsyncUtil.getAsyncBackgroundHandler()
+    ) {
     override fun buildModels(homeScreenItems: List<HomeScreenItem>?) {
         searchBar {
             id("search_bar")
         }
         //*************************************************
         slider {
-            val sliderList = homeScreenItems?.filter { it.medicine_image_url.startsWith("slider images/") }
-           Log.d(TAG, "sslslslslslsl0$homeScreenItems")
+            val sliderList =
+                homeScreenItems?.filter { it.medicine_image_url.startsWith("slider images/") }
+            Log.d(TAG, "sslslslslslsl0$homeScreenItems")
             id("dot_indicator")
             //delay before every cycle if user is not scrolling
             cycleDelay(3_000)
@@ -44,7 +46,6 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : TypedEpoxy
                     it
                 )
             }
-            //make fliker
             infinite(true)
             copier { oldModel ->
                 oldModel as CarocellBindingModel_
@@ -60,31 +61,21 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : TypedEpoxy
         categories {
             id("categories_cell")
             url(NameOfImages())
-            onClickMedicine{ _ ->
+            onClickMedicine { _ ->
                 this@HomeEpoxyController.homeViewModel.putCategoryName("MEDICINE")
-                this@HomeEpoxyController.homeViewModel.buttonGoToMedicines()
-
             }
             onClickHealth { _ ->
-                this@HomeEpoxyController.homeViewModel.buttonGoToHealth()
                 this@HomeEpoxyController.homeViewModel.putCategoryName("HEALTH")
             }
-            onClickAccessories{_ ->
-                this@HomeEpoxyController.homeViewModel.buttonGoToAccessories()
+            onClickAccessories { _ ->
                 this@HomeEpoxyController.homeViewModel.putCategoryName("ACCESSORIES")
             }
             onClickPersonalCare { _ ->
-                this@HomeEpoxyController.homeViewModel.buttonGoToPersonalCare()
                 this@HomeEpoxyController.homeViewModel.putCategoryName("PERSONAL CARE")
             }
             onClickBeautyCare { _ ->
-                this@HomeEpoxyController.homeViewModel.buttonGoToBeautyCare()
                 this@HomeEpoxyController.homeViewModel.putCategoryName("BEAUTY CARE")
             }
-           /* val categoriesList = imagesOfSlider?.filter { it.id.startsWith("cat") }
-            val myListObject : ListOfImages = categoriesList?.let { ListOfImages(it) }!!*/
-         //   listOfImagesOfCategories(myListObject)
-          //  listOfImagesOfCategories(myListObject)
         }
         //**********************************************************
         offersTitle {
@@ -103,20 +94,5 @@ class HomeEpoxyController(private val homeViewModel: HomeViewModel) : TypedEpoxy
             id("offers_caroCell")
             listOfOffers?.let { models(it) }
         }
-        //***********************************************
-/*        val offerCaroCellItem2 = imagesOfSlider?.mapIndexed { _, image ->
-            OfferCellBindingModel_().id(image.id)
-        }
-        carousel {
-            id("fers_caroCell")
-            offerCaroCellItem2?.let { models(it) }
-
-        }*/
-        //******************************************
-        /*offerCell {
-            imagesOfSlider?.mapIndexed { _, image ->
-                id(image.id)
-            }
-        }*/
     }
 }

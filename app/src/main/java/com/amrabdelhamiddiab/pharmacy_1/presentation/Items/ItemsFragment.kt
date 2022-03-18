@@ -21,9 +21,6 @@ class ItemsFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var gridLayoutManager: GridLayoutManager
 
-/*    private val viewModel: MedicinesViewModel by lazy {
-        ViewModelProvider(this, PharmacyViewModelFactory)[MedicinesViewModel::class.java]
-    }*/
     private val viewModel: HomeViewModel by navGraphViewModels(R.id.nested_graph_home){
         PharmacyViewModelFactory
 }
@@ -49,14 +46,8 @@ class ItemsFragment : Fragment() {
             }
         }
         viewModel.listOfMedicines.observe(viewLifecycleOwner){
-            //  Log.d(TAG, "AAAAA"+ a.toString() +"BBBBB"+ b.toString())
             medicineEpoxyController.setData(it)
         }
-    /*    viewModel.urlSubCategory.observe(viewLifecycleOwner){
-            viewModel.downloadMedicines("medicine/$it")
-        }*/
-        //   viewModel.downloadImagesOfSlider()
-        //  viewModel.downloadOffers()
         viewModel.downloadMedicines("${viewModel.urlSubCategory.value}")
         Log.d(TAG,"*8*8*8*8*8*8${viewModel.urlSubCategory.value}" )
         return binding.root

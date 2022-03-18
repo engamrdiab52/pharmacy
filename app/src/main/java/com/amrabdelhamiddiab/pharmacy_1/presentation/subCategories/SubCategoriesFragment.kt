@@ -1,6 +1,7 @@
 package com.amrabdelhamiddiab.pharmacy_1.presentation.subCategories
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +18,7 @@ import com.amrabdelhamiddiab.pharmacy_1.databinding.FragmentMedicineSubCategorie
 import com.amrabdelhamiddiab.pharmacy_1.framework.utilis.PharmacyViewModelFactory
 import com.amrabdelhamiddiab.pharmacy_1.presentation.home.HomeViewModel
 
-class subCategoriesFragment : Fragment() {
+class SubCategoriesFragment : Fragment() {
     private lateinit var binding: FragmentMedicineSubCategoriesBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var gridLayoutManager: GridLayoutManager
@@ -38,6 +39,11 @@ class subCategoriesFragment : Fragment() {
             container,
             false
         )
+        val bundle = arguments
+        if (bundle == null) {
+            Log.e("Confirmation", "ConfirmationFragment did not receive traveler information")
+        }
+        val args = SubCategoriesFragmentArgs.fromBundle(bundle!!)
         recyclerView = binding.recyclerViewMedicineSubCategories
         gridLayoutManager = GridLayoutManager(context, 3)
         recyclerView.layoutManager = gridLayoutManager
@@ -45,7 +51,7 @@ class subCategoriesFragment : Fragment() {
         viewModel.subCategoryIconClicked.observe(viewLifecycleOwner) {
             findNavController().navigate(R.id.action_medicineSubCategoriesFragment2_to_medicinesFragment2)
         }
-        when (viewModel.mainCategory.value) {
+        when (args.mainCategoryName) {
             "MEDICINE" -> {
                 medicineSubCategoriesEpoxyController.setData(ListOfSubCategoriesItems().listOfMedicineSubCategories)
             }

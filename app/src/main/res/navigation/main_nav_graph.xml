@@ -66,11 +66,13 @@
             tools:layout="@layout/fragment_home">
             <action
                 android:id="@+id/action_homeFragment_to_medicineSubCategoriesFragment2"
-                app:destination="@id/medicineSubCategoriesFragment" />
-           <action
-                android:id="@+id/action_homeFragment_to_nested_graph_login"
-                app:destination="@id/nested_graph_login"
-               />
+                app:destination="@id/medicineSubCategoriesFragment">
+                <argument
+                    android:name="main_category_name"
+                    app:argType="string"
+                    android:defaultValue="MEDICINE" />
+            </action>
+
         </fragment>
         <action
             android:id="@+id/action_global_nested_graph_login"
@@ -83,11 +85,15 @@
             app:destination="@id/deleteAccount" />
         <fragment
             android:id="@+id/medicineSubCategoriesFragment"
-            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.subCategories.subCategoriesFragment"
+            android:name="com.amrabdelhamiddiab.pharmacy_1.presentation.subCategories.SubCategoriesFragment"
             android:label="MedicineSubCategoriesFragment">
             <action
                 android:id="@+id/action_medicineSubCategoriesFragment2_to_medicinesFragment2"
                 app:destination="@id/medicinesFragment" />
+            <argument
+                android:name="main_category_name"
+                app:argType="string"
+                android:defaultValue="MEDICINE" />
         </fragment>
         <fragment
             android:id="@+id/medicinesFragment"
